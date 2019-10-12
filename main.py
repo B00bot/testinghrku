@@ -21,6 +21,7 @@ stick2="CAADAgAD7g0AAqgILwj_8DhBu2dnDRYE"
 stick3="CAADBAADfQADzjkIDSgZQLclD7jiFgQ"
 stick4="CAADBAADRAADzjkIDbv4-ULKD6hiFgQ"
 stick5="CAADAgAD0gIAArnzlwt4AXAE0tVijhYE"
+@bot.message_handler(commands=['proof'])
 def proof():
     randomstick=random.randint(1,5)
     if randomstick==1:
@@ -34,6 +35,7 @@ def proof():
     elif randomstick==5:
         pic=stick5
     bot.sendSticker(message.chat_id, sticker=pic)   
+@bot.message_handler(commands=['grustno'])
 def grustno():
     pic=open('s1200.jpeg', 'rb')
     bot.send_photo(message.chat_id, photo=pic);
