@@ -47,4 +47,4 @@ def msg(message):
         bot.send_message(message.chat.id, 'Если хочешь узнать секрет, нажми секрет. Если нужно доказательство, нажми Доказательство. Если грустно, нажми Грустно.')
 
 bot.polling(none_stop=True)
-    
+bot.idle() 
