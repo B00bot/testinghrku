@@ -33,17 +33,17 @@ def proof(bot, update):
         pic=stick4
     elif randomstick==5:
         pic=stick5
-    bot.sendSticker(chat_id=update.message.chat_id, sticker=pic)
+    bot.sendSticker(message.chat_id, sticker=pic)
     
 def grustno(bot, update):
     pic=open('s1200.jpeg', 'rb')
-    bot.send_photo(chat_id=message.chat_id, photo=pic);
-    bot.sendMessage(chat_id=message.chat_id, text="Ни грустииии") 
+    bot.send_photo(message.chat_id, photo=pic);
+    bot.sendMessage(message.chat_id, "Ни грустииии") 
 
 @bot.message_handler(content_types=['text'])
 def msg(message):
     if message.text == 'Секрет':
-        bot.send_message(message.chat.id text="Мой создатель любит Лапу")
+        bot.send_message(message.chat.id, "Мой создатель любит Лапу")
     elif message.text == 'Доказательство':
         proof
     elif message.text == 'Грустно':
