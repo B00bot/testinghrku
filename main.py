@@ -21,7 +21,7 @@ stick2="CAADAgAD7g0AAqgILwj_8DhBu2dnDRYE"
 stick3="CAADBAADfQADzjkIDSgZQLclD7jiFgQ"
 stick4="CAADBAADRAADzjkIDbv4-ULKD6hiFgQ"
 stick5="CAADAgAD0gIAArnzlwt4AXAE0tVijhYE"
-def proof(message):
+def proof():
     randomstick=random.randint(1,5)
     if randomstick==1:
         pic=stick1
@@ -34,7 +34,7 @@ def proof(message):
     elif randomstick==5:
         pic=stick5
     bot.sendSticker(message.chat_id, sticker=pic)   
-def grustno(message):
+def grustno():
     pic=open('s1200.jpeg', 'rb')
     bot.send_photo(message.chat_id, photo=pic);
     bot.sendMessage(message.chat_id, "Ни грустииии") 
@@ -44,9 +44,9 @@ def msg(message):
     if message.text == 'Секрет':
         bot.send_message(message.chat.id, "Мой создатель любит Лапу")
     elif message.text == 'Доказательство':
-        main.proof
+        proof
     elif message.text == 'Грустно':
-        main.grustno
+        grustno
     elif message.text == 'Нипанятнаа':
         bot.send_message(message.chat.id, 'Если хочешь узнать секрет, нажми секрет. Если нужно доказательство, нажми Доказательство. Если грустно, нажми Грустно.')
 
