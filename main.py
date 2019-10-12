@@ -53,5 +53,6 @@ def msg(message):
         grustno
     elif message.text == 'Нипанятнаа':
         bot.send_message(message.chat.id, 'Если хочешь узнать секрет, нажми секрет. Если нужно доказательство, нажми Доказательство. Если грустно, нажми Грустно.')
-bot.polling(nonstop.polling=True)
+
+bot.polling(none_stop=True)
     
