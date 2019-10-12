@@ -20,7 +20,7 @@ def startpg(message):
     startmenu.row('Нипанятнаа')
     bot.send_message(message.chat.id, 'Привет. Если хочешь узнать секрет, нажми секрет. Если нужно доказательство, нажми Доказательство. Если грустно, нажми Грустно. Если нужна помошь - нажми Нипанятнаа', reply_markup=startmenu)
     
-@bot.message_handler(content_types=['text'])
+@bot.message_handler(content_types=['text', "photo", "sticker"])
 def msg(message):
     if message.text == 'Секрет':
         bot.send_message(message.chat.id, "Мой создатель любит Лапу")
