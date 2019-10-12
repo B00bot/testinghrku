@@ -6,6 +6,15 @@ import random
 TOKEN = '971858815:AAGd5HKRgTmUFpaxo4S4szOmonfA0T0EZqI'
 
 bot = telebot.TeleBot(TOKEN)
+
+@bot.message_handler(commands=['start'])
+def startpg(message):
+    startmenu = types.ReplyKeyboardMarkup(True, False)
+    startmenu.row('Секрет', 'Доказательство')
+    startmenu.row('Грустно')
+    startmenu.row('Нипанятнаа')
+    bot.send_message(message.chat.id, 'Привет. Если хочешь узнать секрет, нажми секрет. Если нужно доказательство, нажми Доказательство. Если грустно, нажми Грустно. Если нужна помошь - нажми Нипанятнаа', reply_markup=startmenu)
+
 stick1="CAADAgADCwADlp-MDpuVH3sws_a7FgQ"
 stick2="CAADAgAD7g0AAqgILwj_8DhBu2dnDRYE"
 stick3="CAADBAADfQADzjkIDSgZQLclD7jiFgQ"
@@ -26,19 +35,10 @@ def proof(bot, update):
         pic=stick5
     bot.sendSticker(chat_id=update.message.chat_id, sticker=pic)
     
-
 def grustno(bot, update):
     pic=open('s1200.jpeg', 'rb')
     bot.send_photo(chat_id=message.chat_id, photo=pic);
-    bot.sendMessage(chat_id=message.chat_id, text="Ни грустииии")
-    
-@bot.message_handler(commands=['start'])
-def startpg(message):
-    startmenu = types.ReplyKeyboardMarkup(True, False)
-    startmenu.row('Секрет', 'Доказательство')
-    startmenu.row('Грустно')
-    startmenu.row('Нипанятнаа')
-    bot.send_message(message.chat.id, 'Привет. Если хочешь узнать секрет, нажми секрет. Если нужно доказательство, нажми Доказательство. Если грустно, нажми Грустно. Если нужна помошь - нажми Нипанятнаа', reply_markup=startmenu)
+    bot.sendMessage(chat_id=message.chat_id, text="Ни грустииии") 
 
 @bot.message_handler(content_types=['text'])
 def msg(message):
