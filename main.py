@@ -21,7 +21,7 @@ stick3="CAADBAADfQADzjkIDSgZQLclD7jiFgQ"
 stick4="CAADBAADRAADzjkIDbv4-ULKD6hiFgQ"
 stick5="CAADAgAD0gIAArnzlwt4AXAE0tVijhYE"
 
-def proof(bot, update):
+def proof(message):
     randomstick=random.randint(1,5)
     if randomstick==1:
         pic=stick1
@@ -35,7 +35,7 @@ def proof(bot, update):
         pic=stick5
     bot.sendSticker(message.chat_id, sticker=pic)
     
-def grustno(bot, update):
+def grustno(message):
     pic=open('s1200.jpeg', 'rb')
     bot.send_photo(message.chat_id, photo=pic);
     bot.sendMessage(message.chat_id, "Ни грустииии") 
