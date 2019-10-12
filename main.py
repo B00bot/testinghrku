@@ -15,6 +15,9 @@ def startpg(message):
     startmenu.row('Нипанятнаа')
     bot.send_message(message.chat.id, 'Привет. Если хочешь узнать секрет, нажми секрет. Если нужно доказательство, нажми Доказательство. Если грустно, нажми Грустно. Если нужна помошь - нажми Нипанятнаа', reply_markup=startmenu)
 
+
+@bot.message_handler(content_types=['text'])
+
 stick1="CAADAgADCwADlp-MDpuVH3sws_a7FgQ"
 stick2="CAADAgAD7g0AAqgILwj_8DhBu2dnDRYE"
 stick3="CAADBAADfQADzjkIDSgZQLclD7jiFgQ"
@@ -40,7 +43,7 @@ def grustno(message):
     bot.send_photo(message.chat_id, photo=pic);
     bot.sendMessage(message.chat_id, "Ни грустииии") 
 
-@bot.message_handler(content_types=['text'])
+
 def msg(message):
     if message.text == 'Секрет':
         bot.send_message(message.chat.id, "Мой создатель любит Лапу")
@@ -50,5 +53,5 @@ def msg(message):
         grustno
     elif message.text == 'Нипанятнаа':
         bot.send_message(message.chat.id, 'Если хочешь узнать секрет, нажми секрет. Если нужно доказательство, нажми Доказательство. Если грустно, нажми Грустно.')
-bot.polling()
+bot.polling(nonstop.polling=True)
     
