@@ -16,14 +16,11 @@ def startpg(message):
     bot.send_message(message.chat.id, 'Привет. Если хочешь узнать секрет, нажми секрет. Если нужно доказательство, нажми Доказательство. Если грустно, нажми Грустно. Если нужна помошь - нажми Нипанятнаа', reply_markup=startmenu)
 
 
-@bot.message_handler(content_types=['text'])
-
 stick1="CAADAgADCwADlp-MDpuVH3sws_a7FgQ"
 stick2="CAADAgAD7g0AAqgILwj_8DhBu2dnDRYE"
 stick3="CAADBAADfQADzjkIDSgZQLclD7jiFgQ"
 stick4="CAADBAADRAADzjkIDbv4-ULKD6hiFgQ"
 stick5="CAADAgAD0gIAArnzlwt4AXAE0tVijhYE"
-
 def proof(message):
     randomstick=random.randint(1,5)
     if randomstick==1:
@@ -36,14 +33,13 @@ def proof(message):
         pic=stick4
     elif randomstick==5:
         pic=stick5
-    bot.sendSticker(message.chat_id, sticker=pic)
-    
+    bot.sendSticker(message.chat_id, sticker=pic)   
 def grustno(message):
     pic=open('s1200.jpeg', 'rb')
     bot.send_photo(message.chat_id, photo=pic);
     bot.sendMessage(message.chat_id, "Ни грустииии") 
-
-
+    
+@bot.message_handler(content_types=['text'])
 def msg(message):
     if message.text == 'Секрет':
         bot.send_message(message.chat.id, "Мой создатель любит Лапу")
