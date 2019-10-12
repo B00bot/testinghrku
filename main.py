@@ -25,7 +25,7 @@ def msg(message):
     if message.text == 'Секрет':
         bot.send_message(message.chat.id, "Мой создатель любит Лапу")
     elif message.text == 'Доказательство':
-        def proof():
+        def proof(message):
             randomstick=random.randint(1,5)
             if randomstick==1:
                 pic=stick1
@@ -39,7 +39,7 @@ def msg(message):
                 pic=stick5
             bot.sendSticker(message.chat_id, sticker=pic) 
     elif message.text == 'Грустно':
-        def grustno():
+        def grustno(message):
             pic=open('s1200.jpeg', 'rb')
             bot.send_photo(message.chat_id, photo=pic);
             bot.sendMessage(message.chat_id, "Ни грустииии") 
