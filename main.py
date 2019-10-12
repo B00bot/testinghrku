@@ -6,7 +6,7 @@ TOKEN = '971858815:AAGd5HKRgTmUFpaxo4S4szOmonfA0T0EZqI'
 
 bot = telebot.TeleBot(TOKEN)
     
-    @bot.message_handler(commands=['start'])
+@bot.message_handler(commands=['start'])
 def startpg(message):
     startmenu = types.ReplyKeyboardMarkup(True, False)
     startmenu.row('Секрет', 'Доказательство')
