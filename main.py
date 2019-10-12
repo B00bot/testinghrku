@@ -44,9 +44,9 @@ def msg(message):
     if message.text == 'Секрет':
         bot.send_message(message.chat.id, "Мой создатель любит Лапу")
     elif message.text == 'Доказательство':
-        proof
+        bot.proof
     elif message.text == 'Грустно':
-        grustno
+        bot.grustno
     elif message.text == 'Нипанятнаа':
         bot.send_message(message.chat.id, 'Если хочешь узнать секрет, нажми секрет. Если нужно доказательство, нажми Доказательство. Если грустно, нажми Грустно.')
 
