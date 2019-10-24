@@ -7,6 +7,7 @@ from config import TOKEN
 from flask import Flask, request
 import random
 import keyboard
+from keyboard import keyb
 bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
 
