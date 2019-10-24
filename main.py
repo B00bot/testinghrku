@@ -6,40 +6,33 @@ from config import *
 from config import TOKEN
 from flask import Flask, request
 import random
-
+import keyboard
 bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
 
 stickers = ["CAADAgADCwADlp-MDpuVH3sws_a7FgQ", "CAADAgAD7g0AAqgILwj_8DhBu2dnDRYE", "CAADBAADfQADzjkIDSgZQLclD7jiFgQ", "CAADBAADRAADzjkIDbv4-ULKD6hiFgQ", "CAADAgAD0gIAArnzlwt4AXAE0tVijhYE", "CAADAgAD2gEAAsdjXBUX3pc5V_GYDBYE", "CAADBAADmAADzjkIDRaa2RCZbCJWFgQ", "CAADBAADkwADzjkIDYydFNXPYxHoFgQ", "CAADAgAD4w0AAqgILwh6UH_uBQWn_RYE", "CAADAgADBAgAAhhC7ghzMDDTpZ3HjRYE", "CAADAgADCAADl_TGFHTucAABYtoR1BYE"]
 
-keyb = types.ReplyKeyboardMarkup(True, False)
-keyb.row('/secret', '/proof','/grustno')
-keyb.row('/help')
 @bot.message_handler(commands=['start'])
 def start_message(msg):
     bot.send_message(msg.chat.id, "Привет, если хочешь узнать тайну, отправь /secret Если нужны доказательства - отправь /proof Если грустно - отправь /grustno", reply_markup=keyb)
 
 
-@bot.message_handler(commands=['secret'])
-def secret_message(msg):
-    bot.send_message(msg.chat.id, "Мой создатель любит тебя")
+@bot.message_handler(content_types=['text'])
+def amy_message(msg):
+    if msg == 'Секрет':
+        bot.send_message(msg.chat.id, "Мой создатель любит тебя")
+    elif msg == 'Доказательство':
+        randomstick = random.randint(0, 10)
+        pic = stickers[randomstick]
+        bot.send_message(msg.chat.id, "Создатель просил передать...")
+        bot.send_sticker(msg.chat.id, pic)
+    elif msg == 'Грустно':
+        pic=open('s1200.jpeg', 'rb')
+        bot.send_photo(msg.chat.id, pic)
+        bot.send_message(msg.chat.id, "Ни грустииии")
+    elif msg == 'Нипанятнаа':
+         bot.send_message(msg.chat.id, "Если хочешь узнать тайну, отправь /secret Если нужны доказательства - отправь /proof Если грустно - отправь /grustno")
 
-@bot.message_handler(commands=['help'])
-def help_message(msg):
-    bot.send_message(msg.chat.id, "Если хочешь узнать тайну, отправь /secret Если нужны доказательства - отправь /proof Если грустно - отправь /grustno")
-
-@bot.message_handler(commands=['proof'])
-def proof_message(msg):
-    randomstick = random.randint(0, 10)
-    pic = stickers[randomstick]
-    bot.send_message(msg.chat.id, "Создатель просил передать...")
-    bot.send_sticker(msg.chat.id, pic);
-
-@bot.message_handler(commands=['grustno'])
-def grustno(msg):
-    pic=open('s1200.jpeg', 'rb')
-    bot.send_photo(msg.chat.id, pic);
-    bot.send_message(msg.chat.id, "Ни грустииии")
 
 @server.route('/' + TOKEN, methods=['POST'])
 def getMessage():
