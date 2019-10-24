@@ -6,12 +6,8 @@ TOKEN = '971858815:AAGd5HKRgTmUFpaxo4S4szOmonfA0T0EZqI'
 bot = telebot.TeleBot(TOKEN)
 
 markup = types.ReplyKeyboardMarkup()
-button1 = types.KeyboardButton('Секрет')
-button2 = types.KeyboardButton('Доказательство')
-button3 = types.KeyboardButton('Грустно')
-button4 = types.KeyboardButton('Памагити')
-markup.row(button1, button2, button3)
-markup.row(button4)
+markup.row(('Секрет', 'Доказательство', 'Грустно')
+markup.row('Памагити')
 
 #stickers for random
 stickers = ["CAADAgADCwADlp-MDpuVH3sws_a7FgQ", "CAADAgAD7g0AAqgILwj_8DhBu2dnDRYE", "CAADBAADfQADzjkIDSgZQLclD7jiFgQ", "CAADBAADRAADzjkIDbv4-ULKD6hiFgQ", "CAADAgAD0gIAArnzlwt4AXAE0tVijhYE", "CAADAgAD2gEAAsdjXBUX3pc5V_GYDBYE", "CAADBAADmAADzjkIDRaa2RCZbCJWFgQ", "CAADBAADkwADzjkIDYydFNXPYxHoFgQ", "CAADAgAD4w0AAqgILwh6UH_uBQWn_RYE", "CAADAgADBAgAAhhC7ghzMDDTpZ3HjRYE", "CAADAgADCAADl_TGFHTucAABYtoR1BYE"]
