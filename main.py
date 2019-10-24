@@ -5,7 +5,7 @@ import random
 TOKEN = '971858815:AAGd5HKRgTmUFpaxo4S4szOmonfA0T0EZqI'
 bot = telebot.TeleBot(TOKEN)
 
-markup = types.ReplyKeyboardMarkup()
+markup = types.ReplyKeyboardMarkup(True, False)
 markup.row(('Секрет', 'Доказательство', 'Грустно')
 markup.row('Памагити')
 
