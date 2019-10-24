@@ -3,8 +3,6 @@ import requests
 import config
 import telebot
 from telebot import types
-import os
-import logging
 import random
 bot = telebot.TeleBot(config.token)
 
