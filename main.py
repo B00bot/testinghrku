@@ -15,24 +15,24 @@ stickers = ["CAADAgADCwADlp-MDpuVH3sws_a7FgQ", "CAADAgAD7g0AAqgILwj_8DhBu2dnDRYE
 
 @bot.message_handler(commands=['start'])
 def start_message(msg):
-    bot.send_message(msg.chat.id, "Привет, если хочешь узнать тайну, отправь /secret Если нужны доказательства - отправь /proof Если грустно - отправь /grustno", reply_markup=keyb)
+    bot.send_message(msg.chat.id, "Если хочешь узнать тайну, нажми Секрет. Если нужны доказательства - нажми Докажи Если грустно - нажми Грустно", reply_markup=keyb)
 
 
 @bot.message_handler(content_types=['text'])
 def amy_message(msg):
-    if msg == 'Секрет':
-        bot.send_message(msg.chat.id, "Мой создатель любит тебя")
-    elif msg == 'Доказательство':
+    if msg.text.lower() == 'секрет':
+        bot.send_message(msg.chat.id, "Мой создатель любит тебя", reply_markup=keyb)
+    elif msg.text.lower() == 'докажи':
         randomstick = random.randint(0, 10)
         pic = stickers[randomstick]
-        bot.send_message(msg.chat.id, "Создатель просил передать...")
+        bot.send_message(msg.chat.id, "Создатель просил передать...", reply_markup=keyb)
         bot.send_sticker(msg.chat.id, pic)
-    elif msg == 'Грустно':
+    elif msg.text.lower() == 'грустно':
         pic=open('s1200.jpeg', 'rb')
         bot.send_photo(msg.chat.id, pic)
-        bot.send_message(msg.chat.id, "Ни грустииии")
-    elif msg == 'Нипанятнаа':
-         bot.send_message(msg.chat.id, "Если хочешь узнать тайну, отправь /secret Если нужны доказательства - отправь /proof Если грустно - отправь /grustno")
+        bot.send_message(msg.chat.id, "Ни грустииии", reply_markup=keyb)
+    elif msg.text.lower() == 'нипанятнаа':
+         bot.send_message(msg.chat.id, "Если хочешь узнать тайну, нажми Секрет. Если нужны доказательства - нажми Докажи Если грустно - нажми Грустно", reply_markup=keyb)
 
 
 @server.route('/' + TOKEN, methods=['POST'])
