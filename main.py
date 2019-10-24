@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import requests
 import config
 import telebot
 from telebot import types
@@ -23,30 +22,20 @@ def start(message):
 
 @bot.message_handler(content_types=['text'])
 def secret(message):
-    if message.text.lower()="секрет"
+    if message.text.lower()="секрет":
         bot.sendMessage(chat_id=message.chat_id, text="Мой создатель любит Лапу", reply_markup=markup)
-
-
-@bot.message_handler(content_types=['text'])
 def help(message):
     if message.text.lower()="памагити":
         bot.sendMessage(chat_id=message.chat_id, text="если хочешь узнать тайну, Нажми Секрет Если нужны доказательства - нажми Доказательство. Если грустно - нажми Грустно, если нужна помошь, нажми Памагити", reply_markup=markup)	
-
-
-
-@bot.message_handler(content_types=['text'])
 def proof(message):
     if message.text.lower()="доказательство":
         randomstick=random.randint(0,10)
         pic=stickers[randomstick]
         bot.sendSticker(chat_id=message.chat_id, sticker=pic, reply_markup=markup);
-
-@bot.message_handler(content_types=['text'])
 def grustno(message):
     if message.text.lower()="памагити":
         pic=open('s1200.jpeg', 'rb')
         bot.send_photo(chat_id=message.chat_id, photo=pic);
         bot.sendMessage(chat_id=message.chat_id, text="Ни грустииии", reply_markup=markup)
-
 
 bot.infinity_polling(True)
