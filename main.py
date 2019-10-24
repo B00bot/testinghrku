@@ -1,50 +1,58 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
+import requests
+import config
 import telebot
 from telebot import types
+import os
+import logging
 import random
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                     level=logging.INFO)
+PORT = int(os.environ.get('PORT', '8443'))
+bot = telebot.TeleBot(config.token)
 
-TOKEN = '971858815:AAGd5HKRgTmUFpaxo4S4szOmonfA0T0EZqI'
+markup = types.ReplyKeyboardMarkup()
+button1 = types.KeyboardButton('Секрет')
+button2 = types.KeyboardButton('Доказательство')
+button3 = types.KeyboardButton('Грустно')
+button4 = types.KeyboardButton('Памагити')
+markup.row(button1, button2, button3)
+markup.row(button4)
 
-bot = telebot.TeleBot(TOKEN)
-stick1="CAADAgADCwADlp-MDpuVH3sws_a7FgQ"
-stick2="CAADAgAD7g0AAqgILwj_8DhBu2dnDRYE"
-stick3="CAADBAADfQADzjkIDSgZQLclD7jiFgQ"
-stick4="CAADBAADRAADzjkIDbv4-ULKD6hiFgQ"
-stick5="CAADAgAD0gIAArnzlwt4AXAE0tVijhYE"
 
 @bot.message_handler(commands=['start'])
-def startpg(message):
-    startmenu = types.ReplyKeyboardMarkup(True, False)
-    startmenu.row('Секрет', 'Доказательство')
-    startmenu.row('Грустно')
-    startmenu.row('Нипанятнаа')
-    bot.send_message(message.chat.id, 'Привет. Если хочешь узнать секрет, нажми секрет. Если нужно доказательство, нажми Доказательство. Если грустно, нажми Грустно. Если нужна помошь - нажми Нипанятнаа', reply_markup=startmenu)
-    
-@bot.message_handler(content_types=['text', "photo", "sticker"])
-def msg(message):
-    if message.text == 'Секрет':
-        bot.send_message(message.chat.id, "Мой создатель любит Лапу")
-    elif message.text == 'Доказательство':
-        def proof(message):
-            randomstick=random.randint(1,5)
-            if randomstick==1:
-                pic=stick1
-            elif randomstick==2:
-                pic=stick2
-            elif randomstick==3:
-                pic=stick3
-            elif randomstick==4:
-                pic=stick4
-            elif randomstick==5:
-                pic=stick5
-            bot.sendSticker(message.chat_id, sticker=pic) 
-    elif message.text == 'Грустно':
-        def grustno(message):
-            pic=open('s1200.jpeg', 'rb')
-            bot.send_photo(message.chat_id, photo=pic);
-            bot.sendMessage(message.chat_id, "Ни грустииии") 
-    elif message.text == 'Нипанятнаа':
-        bot.send_message(message.chat.id, 'Если хочешь узнать секрет, нажми секрет. Если нужно доказательство, нажми Доказательство. Если грустно, нажми Грустно.')
+def start(message):
+    bot.sendMessage(chat_id=message.chat_id, text="Привет, если хочешь узнать тайну, Нажми Секрет Если нужны доказательства - нажми Доказательство. Если грустно - нажми Грустно, если нужна помошь, нажми Памагити", reply_markup=markup)	
 
-bot.polling(none_stop=True)
+@bot.message_handler(content_types=['text'])
+def secret(message):
+    if message.text.lower()="секрет"
+        bot.sendMessage(chat_id=update.message.chat_id, text="Мой создатель любит Лапу", reply_markup=markup)
+
+
+@bot.message_handler(content_types=['text'])
+def help(message):
+    if message.text.lower()="памагити":
+        bot.sendMessage(chat_id=update.message.chat_id, text="если хочешь узнать тайну, Нажми Секрет Если нужны доказательства - нажми Доказательство. Если грустно - нажми Грустно, если нужна помошь, нажми Памагити", reply_markup=markup)	
+
+
+#stickers for random
+stickers = ["CAADAgADCwADlp-MDpuVH3sws_a7FgQ", "CAADAgAD7g0AAqgILwj_8DhBu2dnDRYE", "CAADBAADfQADzjkIDSgZQLclD7jiFgQ", "CAADBAADRAADzjkIDbv4-ULKD6hiFgQ", "CAADAgAD0gIAArnzlwt4AXAE0tVijhYE", "CAADAgAD2gEAAsdjXBUX3pc5V_GYDBYE", "CAADBAADmAADzjkIDRaa2RCZbCJWFgQ", "CAADBAADkwADzjkIDYydFNXPYxHoFgQ", "CAADAgAD4w0AAqgILwh6UH_uBQWn_RYE", "CAADAgADBAgAAhhC7ghzMDDTpZ3HjRYE", "CAADAgADCAADl_TGFHTucAABYtoR1BYE"]
+
+@bot.message_handler(content_types=['text'])
+def proof(message):
+    if message.text.lower()="доказательство":
+        randomstick=random.randint(0,10)
+        pic=stickers[randomstick]
+        bot.sendSticker(chat_id=update.message.chat_id, sticker=pic, reply_markup=markup);
+
+@bot.message_handler(content_types=['text'])
+def grustno(message):
+    if message.text.lower()="памагити":
+        pic=open('s1200.jpeg', 'rb')
+        bot.send_photo(chat_id=update.message.chat_id, photo=pic);
+        bot.sendMessage(chat_id=update.message.chat_id, text="Ни грустииии", reply_markup=markup)
+
+
+bot.infinity_polling(True)
 bot.idle() 
