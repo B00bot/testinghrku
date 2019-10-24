@@ -36,3 +36,4 @@ def menu(message: types.Message):
         bot.sendMessage(chat_id=message.chat_id, text="Ни грустииии", reply_markup=markup)
 
 bot.polling(none_stop=true)
+bot.idle()
