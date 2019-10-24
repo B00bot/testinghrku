@@ -11,7 +11,11 @@ server = Flask(__name__)
 
 stickers = ["CAADAgADCwADlp-MDpuVH3sws_a7FgQ", "CAADAgAD7g0AAqgILwj_8DhBu2dnDRYE", "CAADBAADfQADzjkIDSgZQLclD7jiFgQ", "CAADBAADRAADzjkIDbv4-ULKD6hiFgQ", "CAADAgAD0gIAArnzlwt4AXAE0tVijhYE", "CAADAgAD2gEAAsdjXBUX3pc5V_GYDBYE", "CAADBAADmAADzjkIDRaa2RCZbCJWFgQ", "CAADBAADkwADzjkIDYydFNXPYxHoFgQ", "CAADAgAD4w0AAqgILwh6UH_uBQWn_RYE", "CAADAgADBAgAAhhC7ghzMDDTpZ3HjRYE", "CAADAgADCAADl_TGFHTucAABYtoR1BYE"]
 
-
+keyb = types.ReplyKeyboardMarkup(True, False)
+keybtn1 = types.KeyboardButton("/secret")
+keybtn2 = types.KeyboardButton("/help")
+keybtn3 = types.KeyboardButton("/proof")
+keybtn4 = types.KeyboardButton("/grustno")
 @bot.message_handler(commands=['start'])
 def start_message(msg):
     bot.send_message(msg.chat.id, "Привет, если хочешь узнать тайну, отправь /secret Если нужны доказательства - отправь /proof Если грустно - отправь /grustno")
@@ -23,7 +27,7 @@ def secret_message(msg):
 
 @bot.message_handler(commands=['help'])
 def help_message(msg):
-    bot.send_message(msg.chat.id, "Если хочешь узнать тайну, отправь /secret Если нужны доказательства - отправь /proof Если грустно - отправь /grustno")
+    bot.send_message(msg.chat.id, "Если хочешь узнать тайну, отправь /secret Если нужны доказательства - отправь /proof Если грустно - отправь /grustno", reply_markup=keyb)
 
 @bot.message_handler(commands=['proof'])
 def proof_message(msg):
