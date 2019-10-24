@@ -19,7 +19,7 @@ def start_message(msg):
 
 @bot.message_handler(commands=['secret'])
 def secret_message(msg):
-    bot.send_messageessage(msg.chat.id, "Мой создатель любит тебя")
+    bot.send_message(msg.chat.id, "Мой создатель любит тебя")
 
 @bot.message_handler(commands=['help'])
 def help_message(msg):
@@ -33,7 +33,7 @@ def proof_message(msg):
     bot.send_sticker(msg.chat.id, pic);
 
 @bot.message_handler(commands=['grustno'])
-def grustno(bot, update):
+def grustno(msg):
     pic=open('s1200.jpeg', 'rb')
     bot.send_photo(msg.chat.id, pic);
     bot.send_message(msg.chat.id, "Ни грустииии")
