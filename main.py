@@ -22,15 +22,15 @@ def start(message):
     bot.register_next_step_handler(message, menu)
 @bot.message_handler(content_types=['text'])
 def menu(message: types.Message):
-    if message.text.lower()=="секрет":
+    if message.text.lower() == 'секрет':
         bot.sendMessage(chat_id=message.chat_id, text="Мой создатель любит Лапу", reply_markup=markup)
-    if message.text.lower()=="памагити":
+    if message.text.lower() == 'памагити':
         bot.sendMessage(chat_id=message.chat_id, text="если хочешь узнать тайну, Нажми Секрет Если нужны доказательства - нажми Доказательство. Если грустно - нажми Грустно, если нужна помошь, нажми Памагити", reply_markup=markup)
-    if message.text.lower()=="доказательство":
+    if message.text.lower() == 'доказательство':
         randomstick=random.randint(0,10)
         pic=stickers[randomstick]
         bot.sendSticker(chat_id=message.chat_id, sticker=pic, reply_markup=markup)
-    if message.text.lower()=="памагити":
+    if message.text.lower() == 'грустно':
         pic=open('s1200.jpeg', 'rb')
         bot.send_photo(chat_id=message.chat_id, photo=pic)
         bot.sendMessage(chat_id=message.chat_id, text="Ни грустииии", reply_markup=markup)
