@@ -17,7 +17,7 @@ keyb.row('/secret', '/proof','/grustno')
 keyb.row('/help')
 @bot.message_handler(commands=['start'])
 def start_message(msg):
-    bot.send_message(msg.chat.id, "Привет, если хочешь узнать тайну, отправь /secret Если нужны доказательства - отправь /proof Если грустно - отправь /grustno")
+    bot.send_message(msg.chat.id, "Привет, если хочешь узнать тайну, отправь /secret Если нужны доказательства - отправь /proof Если грустно - отправь /grustno", reply_markup=keyb)
 
 
 @bot.message_handler(commands=['secret'])
@@ -26,7 +26,7 @@ def secret_message(msg):
 
 @bot.message_handler(commands=['help'])
 def help_message(msg):
-    bot.send_message(msg.chat.id, "Если хочешь узнать тайну, отправь /secret Если нужны доказательства - отправь /proof Если грустно - отправь /grustno", reply_markup=keyb)
+    bot.send_message(msg.chat.id, "Если хочешь узнать тайну, отправь /secret Если нужны доказательства - отправь /proof Если грустно - отправь /grustno")
 
 @bot.message_handler(commands=['proof'])
 def proof_message(msg):
