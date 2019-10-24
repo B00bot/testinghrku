@@ -19,24 +19,24 @@ def start_message(msg):
 
 @bot.message_handler(commands=['secret'])
 def secret_message(msg):
-    bot.send_message(msg.chat_id, "Мой создатель любит тебя")
+    bot.send_messageessage(msg.chat.id, "Мой создатель любит тебя")
 
 @bot.message_handler(commands=['help'])
 def help_message(msg):
-    bot.send_message(msg.chat_id, "Если хочешь узнать тайну, отправь /secret Если нужны доказательства - отправь /proof Если грустно - отправь /grustno")
+    bot.send_message(msg.chat.id, "Если хочешь узнать тайну, отправь /secret Если нужны доказательства - отправь /proof Если грустно - отправь /grustno")
 
 @bot.message_handler(commands=['proof'])
 def proof_message(msg):
     randomstick = random.randint(0, 10)
     pic = stickers[randomstick]
-    bot.send_message(msg.chat_id, "Создатель просил передать...")
-    bot.send_sticker(msg.chat_id, pic);
+    bot.send_message(msg.chat.id, "Создатель просил передать...")
+    bot.send_sticker(msg.chat.id, pic);
 
 @bot.message_handler(commands=['grustno'])
 def grustno(bot, update):
     pic=open('s1200.jpeg', 'rb')
-    bot.send_photo(msg.chat_id, pic);
-    bot.send_message(msg.chat_id, "Ни грустииии")
+    bot.send_photo(msg.chat.id, pic);
+    bot.send_message(msg.chat.id, "Ни грустииии")
 
 @server.route('/' + TOKEN, methods=['POST'])
 def getMessage():
@@ -56,4 +56,5 @@ if __name__ == '__main__':
     server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
 
     # bot.polling(none_stop=True)
+
 
