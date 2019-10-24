@@ -19,23 +19,20 @@ stickers = ["CAADAgADCwADlp-MDpuVH3sws_a7FgQ", "CAADAgAD7g0AAqgILwj_8DhBu2dnDRYE
 @bot.message_handler(commands=['start'])
 def start(message):
     bot.sendMessage(chat_id=message.chat_id, text="Привет, если хочешь узнать тайну, Нажми Секрет Если нужны доказательства - нажми Доказательство. Если грустно - нажми Грустно, если нужна помошь, нажми Памагити")	
-
+    bot.register_next_step_handler(message, menu)
 @bot.message_handler(content_types=['text'])
-def secret(message):
-    if message.text.lower()="секрет":
+def menu(message: types.Message):
+    if message.text.lower()=="секрет":
         bot.sendMessage(chat_id=message.chat_id, text="Мой создатель любит Лапу", reply_markup=markup)
-def help(message):
-    if message.text.lower()="памагити":
-        bot.sendMessage(chat_id=message.chat_id, text="если хочешь узнать тайну, Нажми Секрет Если нужны доказательства - нажми Доказательство. Если грустно - нажми Грустно, если нужна помошь, нажми Памагити", reply_markup=markup)	
-def proof(message):
-    if message.text.lower()="доказательство":
+    if message.text.lower()=="памагити":
+        bot.sendMessage(chat_id=message.chat_id, text="если хочешь узнать тайну, Нажми Секрет Если нужны доказательства - нажми Доказательство. Если грустно - нажми Грустно, если нужна помошь, нажми Памагити", reply_markup=markup)
+    if message.text.lower()=="доказательство":
         randomstick=random.randint(0,10)
         pic=stickers[randomstick]
-        bot.sendSticker(chat_id=message.chat_id, sticker=pic, reply_markup=markup);
-def grustno(message):
-    if message.text.lower()="памагити":
+        bot.sendSticker(chat_id=message.chat_id, sticker=pic, reply_markup=markup)
+    if message.text.lower()=="памагити":
         pic=open('s1200.jpeg', 'rb')
-        bot.send_photo(chat_id=message.chat_id, photo=pic);
+        bot.send_photo(chat_id=message.chat_id, photo=pic)
         bot.sendMessage(chat_id=message.chat_id, text="Ни грустииии", reply_markup=markup)
 
 bot.infinity_polling(True)
