@@ -35,4 +35,4 @@ def menu(message: types.Message):
         bot.send_photo(chat_id=message.chat_id, photo=pic)
         bot.sendMessage(chat_id=message.chat_id, text="Ни грустииии", reply_markup=markup)
 
-bot.infinity_polling(True)
+bot.polling(none_stop=true)
