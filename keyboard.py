@@ -1,3 +1,3 @@
 keyb = types.ReplyKeyboardMarkup(True, False)
-keyb.row('/secret', '/proof','/grustno')
-keyb.row('/help')
+keyb.row('Секрет', 'Доказательство','Грустно')
+keyb.row('Нипанятнаа')
