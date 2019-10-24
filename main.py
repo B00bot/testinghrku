@@ -19,7 +19,7 @@ def start_message(msg):
 
 @bot.message_handler(commands=['secret'])
 def secret_message(msg):
-    bot.send_messageessage(msg.chat_id, "Мой создатель любит тебя")
+    bot.send_message(msg.chat_id, "Мой создатель любит тебя")
 
 @bot.message_handler(commands=['help'])
 def help_message(msg):
