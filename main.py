@@ -5,10 +5,7 @@ from telebot import types
 from config import *
 from config import TOKEN
 from flask import Flask, request
-import sqlalchemy
-from sqlalchemy import create_engine, Column, Integer, String, Boolean, MetaData, Table
-from sqlalchemy.orm import mapper, sessionmaker
-from model import *
+
 bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
 
@@ -17,22 +14,33 @@ def start_message(msg):
     bot.send_message(msg.chat.id, f'''Привет, {msg.from_user.first_name}, 
 перешли мне сообщение с инвентарем и я посчитаю тебе выручку от продажи частей мутантов.'''
 
+#################
+Объявляем переменные со стоимостью частей мутантов
+#################
+dogtail = 50
+zombiehand = 62.5
+hoghoof = 100
+suckerleg = 125
+snorkfoot = 150
+jerboahead = 166.5
+snorkhead = 200
+burerleg = 375
+controlerhand = 625
+burerhand = 625
+suckertentacle = 750
+pseudogiant = 750
+controlerbrain = 1250
+chimeraclaw = 1250
+poltergeistheart = 1875
+#######################
+
 @bot.message_handler(content_types=['text'])
-def parse_msg(msg):
-    if 'Части мутантов'in msg.text:
-        try:
-            if msg.forward_from.id == 738720259:
-                parse_imventory(msg)
-                if str(msg.chat.id)[0] == '-':
-                    bot.reply_to(msg, f'Cпасибо за твой инвентарь {msg.from_user.first_name}')
-        except:
-            bot.send_message(msg.chat.id, 'Странный форвард, не находишь?')
+def frwrdmess(msg)
+if message.forward_from != None:
+    if message.forward_from == "738720259":
+        messtext = msg.text.strip(“\n”)
+        
 
-
-
-
-
- 🔪
 
 @server.route('/' + TOKEN, methods=['POST'])
 def getMessage():
