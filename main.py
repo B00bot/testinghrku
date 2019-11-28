@@ -17,21 +17,21 @@ def start_message(msg):
 #################
 #Объявляем переменные со стоимостью частей мутантов
 #################
-dogtail = 50
-zombiehand = 62.5
-hoghoof = 100
-suckerleg = 125
-snorkfoot = 150
-jerboahead = 166.5
-snorkhead = 200
-burerleg = 375
-controlerhand = 625
-burerhand = 625
-suckertentacle = 750
-pseudogiant = 750
-controlerbrain = 1250
-chimeraclaw = 1250
-poltergeistheart = 1875
+int dogtail = 50
+int zombiehand = 62.5
+int hoghoof = 100
+int suckerleg = 125
+int snorkfoot = 150
+int jerboahead = 166.5
+int snorkhead = 200
+int burerleg = 375
+int controlerhand = 625
+int burerhand = 625
+int suckertentacle = 750
+int pseudogiant = 750
+int controlerbrain = 1250
+int chimeraclaw = 1250
+int poltergeistheart = 1875
 #######################
 
 @bot.message_handler(content_types=['text'])
