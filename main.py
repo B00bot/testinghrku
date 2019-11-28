@@ -39,7 +39,9 @@ def frwrdmess(msg)
 if message.forward_from != None:
     if message.forward_from == "738720259":
         messtext = msg.text.strip(“\n”)
-        
+        bot.send_message(msg.chat.id, '''Схоронил'''
+    else:
+        bot.send_message(msg.chat.id, '''Странный форвард, нет?'''   
 
 
 @server.route('/' + TOKEN, methods=['POST'])
