@@ -95,7 +95,7 @@ def frwrdmess(msg):
                     sucker_tentacle_q = 0.0
                 print(sucker_tentacle_q)
                 if messtext.find('''Нога 🐘Псевдогиганта''') != -1:
-                    pseudo_giant_q = float(re.search(r''''Нога 🐘Псевдогиганта\s(\d+)\sшт''' , messtext).group(1))
+                    pseudo_giant_q = float(re.search(r'''Нога 🐘Псевдогиганта\s(\d+)\sшт''' , messtext).group(1))
                 else:
                     pseudo_giant_q = 0.0
                 print(pseudo_giant_q)
