@@ -39,14 +39,12 @@ def frwrdmess(msg):
         if msg.forward_from.id == 738720259:
             if '🔪Части мутантов' in msg.text:
                 messtext = msg.text.strip('''\n''')
-                bot.send_message(msg.chat.id, '''Схоронил''')
-                print(messtext)
                 if messtext.find('''Хвост 🐶Собаки''') != -1:
                     dog_tail_q = messtext[messtext.find('''Хвост 🐶Собаки''') + 14]
                 else:
                     dog_tail_q = 0
                 if messtext.find('''Рука 🧟‍♂️Зомби''') != -1:
-                    zombie_hand_q = messtext[messtext.find('''Рука 🧟‍♂️Зомби''') + 12]
+                    zombie_hand_q = messtext[messtext.find('''Рука 🧟‍♂️Зомби''') + 13]
                 else:
                     zombie_hand_q = 0
                 if messtext.find('''Копыто 🐗Кабана''') != -1:
@@ -74,7 +72,7 @@ def frwrdmess(msg):
                 else:
                     burer_leg_q = 0
                 if messtext.find('''Рука 👮‍♂️Контролёра''') != -1:
-                    controler_hand_q = messtext[messtext.find('''Рука 👮‍♂️Контролёра''') + 17]
+                    controler_hand_q = messtext[messtext.find('''Рука 👮‍♂️Контролёра''') + 18]
                 else:
                     controler_hand_q = 0
                 if messtext.find('''Рука 🐸Бюрера''') != -1:
@@ -90,7 +88,7 @@ def frwrdmess(msg):
                 else:
                     pseudo_giant_q = 0
                 if messtext.find('''Мозг 👮‍♂️Контролёра''') != -1:
-                    controler_brain_q = messtext[messtext.find('''Мозг 👮‍♂️Контролёра''') + 17]
+                    controler_brain_q = messtext[messtext.find('''Мозг 👮‍♂️Контролёра''') + 18]
                 else:
                     controler_brain_q = 0
                 if messtext.find('''Коготь 🐶🐈Химеры''') != -1:
