@@ -12,38 +12,37 @@ server = Flask(__name__)
 @bot.message_handler(commands=['start'])
 def start_message(msg):
     bot.send_message(msg.chat.id, f'''Привет, {msg.from_user.first_name}, 
-перешли мне сообщение с инвентарем и я посчитаю тебе выручку от продажи частей мутантов.'''
+перешли мне сообщение с инвентарем и я посчитаю тебе выручку от продажи частей мутантов.''')
 
-#################
 #Объявляем переменные со стоимостью частей мутантов
 
-dogtail=50
-zombiehand=62.5
-hoghoof=100
-suckerleg=125
-snorkfoot=150
-jerboahead=166.5
-snorkhead=200
-burerleg=375
-controlerhand=625
-burerhand=625
-suckertentacle=750
-pseudogiant=750
-controlerbrain=1250
-chimeraclaw=1250
-poltergeistheart=1875
+dog_tail=50
+zombie_hand=62.5
+hog_hoof=100
+sucker_leg=125
+snork_foot=150
+jerboa_head=166.5
+snork_head=200
+burer_leg=375
+controler_hand=625
+burer_hand=625
+sucker_tentacle=750
+pseudo_giant=750
+controler_brain=1250
+chimera_claw=1250
+poltergeist_heart=1875
 
-#######################
 
 @bot.message_handler(content_types=['text'])
-def frwrdmess(msg)
-if message.forward_from != None:
-    if message.forward_from == "738720259":
-        messtext = msg.text.strip(“\n”)
-        bot.send_message(msg.chat.id, '''Схоронил'''
+def frwrdmess(msg):
+    if message.forward_from != None:
+        if message.forward_from == "738720259":
+            messtext = msg.text.strip(“\n”)
+            bot.send_message(msg.chat.id, '''Схоронил''')
+        else:
+            bot.send_message(msg.chat.id, '''Странный форвард, нет?''')   
     else:
-        bot.send_message(msg.chat.id, '''Странный форвард, нет?'''   
-
+        bot.send_message(msg.chat.id, '''Не форвард''')
 
 @server.route('/' + TOKEN, methods=['POST'])
 def getMessage():
