@@ -41,8 +41,9 @@ def frwrdmess(msg):
                 messtext = msg.text.strip('''\n''')
                 bot.send_message(msg.chat.id, '''Схоронил''')
                 print(messtext)
-                dog_tail_p = messtext.find('''Хвост 🐶Собаки''')
-                print(dog_tail_p)
+                dog_tail_q = messtext.find('''Хвост 🐶Собаки''') + 15
+                print(dog_tail_q)
+                print(messtext[dog_tail_q])
             else:
                 bot.send_message(msg.chat.id, '''Разве это инвентарь?''')
         else:
