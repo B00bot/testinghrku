@@ -37,9 +37,12 @@ poltergeist_heart=1875
 def frwrdmess(msg):
     if msg.forward_from != None:
         if msg.forward_from.id == 738720259:
-            messtext = msg.text.strip('''\n''')
-            bot.send_message(msg.chat.id, '''Схоронил''')
-            print(messtext)
+            if '🔪Части мутантов' in msg.text:
+                messtext = msg.text.strip('''\n''')
+                bot.send_message(msg.chat.id, '''Схоронил''')
+                print(messtext)
+            else:
+                bot.send_message(msg.chat.id, '''Разве это инвентарь?''')
         else:
             bot.send_message(msg.chat.id, '''Странный форвард, нет?''') 
             fromid = msg.forward_from.id
