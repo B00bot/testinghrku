@@ -114,7 +114,7 @@ def frwrdmess(msg):
                 else:
                     poltergeist_heart_q = 0
                 print(poltergeist_heart_q)
-                gesheft = (dog_tail_q * dog_tail)+(zombie_hand_q * zombie_hand) + (hog_hoof_q * hog_hoof) + (sucker_leg_q *sucker_leg) + (snork_foot_q * snork_foot) + (jerboa_head_q * jerboa_head) + (snork_head_q * snork_head) + (burer_leg_q * burer_leg) + (controler_hand_q * controler_hand) + (burer_hand * burer_hand_q) + (sucker_tentacle_q * sucker_tentacle_q) + (pseudo_giant_q * pseudo_giant) + ( controler_brain_q * controler_brain) + (chimera_claw_q * chimera_claw) + (poltergeist_heart_q * poltergeist_heart)
+                gesheft = (dog_tail_q * dog_tail) + (zombie_hand_q * zombie_hand) + (hog_hoof_q * hog_hoof) + (sucker_leg_q * sucker_leg) + (snork_foot_q * snork_foot) + (jerboa_head_q * jerboa_head) + (snork_head_q * snork_head) + (burer_leg_q * burer_leg) + (controler_hand_q * controler_hand) + (burer_hand * burer_hand_q) + (sucker_tentacle_q * sucker_tentacle_q) + (pseudo_giant_q * pseudo_giant) + ( controler_brain_q * controler_brain) + (chimera_claw_q * chimera_claw) + (poltergeist_heart_q * poltergeist_heart)
                 gesheft_science = gesheft * 4
                 bot.send_message(msg.chat.id, f'''Выручка от продажи частей мутантов составит:
 {gesheft}💰 - если продавать торговцу.
