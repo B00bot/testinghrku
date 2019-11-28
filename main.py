@@ -40,7 +40,9 @@ def frwrdmess(msg):
             messtext = msg.text.strip('''\n''')
             bot.send_message(msg.chat.id, '''Схоронил''')
         else:
-            bot.send_message(msg.chat.id, '''Странный форвард, нет?''')   
+            bot.send_message(msg.chat.id, '''Странный форвард, нет?''') 
+            fromid = msg.forward_from
+            print(fromid)
     else:
         bot.send_message(msg.chat.id, '''Не форвард''')
 
