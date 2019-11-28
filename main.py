@@ -45,7 +45,7 @@ def frwrdmess(msg):
                     dog_tail_q = 0
                 print(dog_tail_q)
                 if messtext.find('''Рука 🧟‍♂️Зомби''') != -1:
-                    zombie_hand_q = messtext[messtext.find('''Рука 🧟‍♂️Зомби''') + 13]
+                    zombie_hand_q = messtext[messtext.find('''Рука 🧟‍♂️Зомби''') + 15]
                 else:
                     zombie_hand_q = 0
                 print(zombie_hand_q)
@@ -80,7 +80,7 @@ def frwrdmess(msg):
                     burer_leg_q = 0
                 print(burer_leg_q)
                 if messtext.find('''Рука 👮‍♂️Контролёра''') != -1:
-                    controler_hand_q = messtext[messtext.find('''Рука 👮‍♂️Контролёра''') + 18]
+                    controler_hand_q = messtext[messtext.find('''Рука 👮‍♂️Контролёра''') + 20]
                 else:
                     controler_hand_q = 0
                 print(controler_hand_q)
@@ -100,7 +100,7 @@ def frwrdmess(msg):
                     pseudo_giant_q = 0
                 print(pseudo_giant_q)
                 if messtext.find('''Мозг 👮‍♂️Контролёра''') != -1:
-                    controler_brain_q = messtext[messtext.find('''Мозг 👮‍♂️Контролёра''') + 18]
+                    controler_brain_q = messtext[messtext.find('''Мозг 👮‍♂️Контролёра''') + 20]
                 else:
                     controler_brain_q = 0
                 print(controler_brain_q)
