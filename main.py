@@ -105,7 +105,8 @@ def frwrdmess(msg):
                     controler_brain_q = 0.0
                 print(controler_brain_q)
                 if messtext.find('''Коготь 🐶🐈Химеры''') != -1:
-                    chimera_claw_q = float(messtext[messtext.find('''Коготь 🐶🐈Химеры''') + 16])
+                    chimera_claw_q = float(messtext[Коготь 🐶🐈Химеры\s(\d+)\sшт])
+                    print(chimera_claw_q)
                 else:
                     chimera_claw_q = 0.0
                 print(chimera_claw_q)
