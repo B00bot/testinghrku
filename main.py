@@ -42,8 +42,20 @@ def frwrdmess(msg):
                 bot.send_message(msg.chat.id, '''Схоронил''')
                 print(messtext)
                 dog_tail_q = messtext.find('''Хвост 🐶Собаки''') + 14
-                print(dog_tail_q)
-                print(messtext[dog_tail_q])
+                zombie_hand_q = messtext.find('''Рука 🧟‍♂️Зомби''') + 12
+                hog_hoof_q = messtext.find('''Копыто 🐗Кабана''') + 15
+                sucker_leg_q = messtext.find('''Нога 🦑Кровососа''') + 16
+                snork_foot_q = messtext.find('''Стопа 🦐Снорка''') + 14
+                jerboa_head_q = messtext.find('''Хвост 🐶Собаки''') + 14
+                snork_head_q = messtext.find('''Голова 🦐Снорка''') + 15
+                burer_leg_q = messtext.find('''Нога 🐸Бюрера''') + 13
+                controler_hand_q = messtext.find('''Рука 👮‍♂️Контролёра''') + 17
+                burer_hand_q = messtext.find('''Рука 🐸Бюрера''') + 13
+                sucker_tentacle_q = messtext.find('''Щупальца 🦑Кровососа''') + 20
+                pseudo_giant_q = messtext.find('''Нога 🐘Псевдогиганта''') + 20
+                controler_brain_q = messtext.find('''Мозг 👮‍♂️Контролёра''') + 17
+                chimera_claw_q = messtext.find('''Коготь 🐶🐈Химеры''') + 16
+                poltergeist_heart_q = messtext.find('''Сердце 🔥Полтергейста''') + 21
             else:
                 bot.send_message(msg.chat.id, '''Разве это инвентарь?''')
         else:
