@@ -16,7 +16,7 @@ def start_message(msg):
 
 #################
 #Объявляем переменные со стоимостью частей мутантов
-#################
+
 dogtail=50
 zombiehand=62.5
 hoghoof=100
@@ -32,6 +32,7 @@ pseudogiant=750
 controlerbrain=1250
 chimeraclaw=1250
 poltergeistheart=1875
+
 #######################
 
 @bot.message_handler(content_types=['text'])
