@@ -43,69 +43,84 @@ def frwrdmess(msg):
                     dog_tail_q = messtext[messtext.find('''Хвост 🐶Собаки''') + 14]
                 else:
                     dog_tail_q = 0
+                print(dog_tail_q)
                 if messtext.find('''Рука 🧟‍♂️Зомби''') != -1:
                     zombie_hand_q = messtext[messtext.find('''Рука 🧟‍♂️Зомби''') + 13]
                 else:
                     zombie_hand_q = 0
+                print(zombie_hand_q)
                 if messtext.find('''Копыто 🐗Кабана''') != -1:
                     hog_hoof_q = messtext[messtext.find('''Копыто 🐗Кабана''') + 15]
                 else:
                     hog_hoof_q = 0
+                print(hog_hoof_q)
                 if messtext.find('''Нога 🦑Кровососа''') != -1:
                     sucker_leg_q = messtext[messtext.find('''Нога 🦑Кровососа''') + 16]
                 else:
                     sucker_leg_q = 0
+                print(sucker_leg_q)
                 if messtext.find('''Стопа 🦐Снорка''') != -1:
                     snork_foot_q = messtext[messtext.find('''Стопа 🦐Снорка''') + 14]
                 else:
                     snork_foot_q = 0
+                print(snork_foot_q)
                 if messtext.find('''Голова 🐀Тушканчика''') != -1:
                     jerboa_head_q = messtext[messtext.find('''Голова 🐀Тушканчика''') + 19]
                 else:
                     jerboa_head_q = 0
+                print(jerboa_head_q)
                 if messtext.find('''Голова 🦐Снорка''') != -1:
                     snork_head_q = messtext[messtext.find('''Голова 🦐Снорка''') + 15]
                 else:
                     snork_head_q = 0
+                print(snork_head_q)
                 if messtext.find('''Нога 🐸Бюрера''') != -1:
                     burer_leg_q = messtext[messtext.find('''Нога 🐸Бюрера''') + 13]
                 else:
                     burer_leg_q = 0
+                print(burer_leg_q)
                 if messtext.find('''Рука 👮‍♂️Контролёра''') != -1:
                     controler_hand_q = messtext[messtext.find('''Рука 👮‍♂️Контролёра''') + 18]
                 else:
                     controler_hand_q = 0
+                print(controler_hand_q)
                 if messtext.find('''Рука 🐸Бюрера''') != -1:
                     burer_hand_q = messtext[messtext.find('''Рука 🐸Бюрера''') + 13]
                 else:
                     burer_hand_q = 0
+                print(burer_hand_q)
                 if messtext.find('''Щупальца 🦑Кровососа''') != -1:
                     sucker_tentacle_q = messtext[messtext.find('''Щупальца 🦑Кровососа''') + 20]
                 else:
                     sucker_tentacle_q = 0
+                print(sucker_tentacle_q)
                 if messtext.find('''Нога 🐘Псевдогиганта''') != -1:
                     pseudo_giant_q = messtext[messtext.find('''Нога 🐘Псевдогиганта''') + 20]
                 else:
                     pseudo_giant_q = 0
+                print(pseudo_giant_q)
                 if messtext.find('''Мозг 👮‍♂️Контролёра''') != -1:
                     controler_brain_q = messtext[messtext.find('''Мозг 👮‍♂️Контролёра''') + 18]
                 else:
                     controler_brain_q = 0
+                print(controler_brain_q)
                 if messtext.find('''Коготь 🐶🐈Химеры''') != -1:
                     chimera_claw_q = messtext[messtext.find('''Коготь 🐶🐈Химеры''') + 16]
                 else:
                     chimera_claw_q = 0
+                print(chimera_claw_q)
                 if messtext.find('''Сердце 🔥Полтергейста''') != -1:
                     poltergeist_heart_q = [messtext.find('''Сердце 🔥Полтергейста''') + 21]
                 else:
                     poltergeist_heart_q = 0
+                print(poltergeist_heart_q)
                 gesheft = (dog_tail_q * dog_tail)+(zombie_hand_q * zombie_hand) + (hog_hoof_q * hog_hoof) + (sucker_leg_q *sucker_leg) + (snork_foot_q * snork_foot) + (jerboa_head_q * jerboa_head) + (snork_head_q * snork_head) + (burer_leg_q * burer_leg) + (controler_hand_q * controler_hand) + (burer_hand * burer_hand_q) + (sucker_tentacle_q * sucker_tentacle_q) + (pseudo_giant_q * pseudo_giant) + ( controler_brain_q * controler_brain) + (chimera_claw_q * chimera_claw) + (poltergeist_heart_q * poltergeist_heart)
                 gesheft_science = gesheft * 4
-                bot.send_message(msg.chat.id, f'''Выручка от продажи частей мутантов составит:
-{gesheft}💰 - если продавать торговцу.
-{gesheft_science}💰 - если продавать ученым.
+                #bot.send_message(msg.chat.id, f'''Выручка от продажи частей мутантов составит:
+#{gesheft}💰 - если продавать торговцу.
+#{gesheft_science}💰 - если продавать ученым.
 
-Удачи, сталкер''')
+#Удачи, сталкер''')
             else:
                 bot.send_message(msg.chat.id, '''Разве это инвентарь?''')
         else:
