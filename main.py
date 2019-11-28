@@ -36,7 +36,7 @@ poltergeist_heart=1875
 @bot.message_handler(content_types=['text'])
 def frwrdmess(msg):
     if msg.forward_from != None:
-        if msg.forward_from.id == "738720259":
+        if msg.forward_from.id == 738720259:
             messtext = msg.text.strip('''\n''')
             bot.send_message(msg.chat.id, '''Схоронил''')
             print(messtext)
