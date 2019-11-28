@@ -1,5 +1,5 @@
 import os
-
+import re
 import telebot
 from telebot import types
 from config import *
@@ -105,7 +105,7 @@ def frwrdmess(msg):
                     controler_brain_q = 0.0
                 print(controler_brain_q)
                 if messtext.find('''Коготь 🐶🐈Химеры''') != -1:
-                    chimera_claw_q = float(messtext[Коготь 🐶🐈Химеры\s(\d+)\sшт])
+                    chimera_claw_q = float(re.search(r”Коготь 🐶🐈Химеры\s(\d+)\sшт” , messtext).group(1))
                     print(chimera_claw_q)
                 else:
                     chimera_claw_q = 0.0
