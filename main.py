@@ -22,13 +22,13 @@ day = f'''Текущая фаза суток - ☀️День.
 night = f'''Текущая фаза суток - 🌑Ночь.
 Самое время убить кого-то из игроков и повысить свой ⚜️Ранг'''
 
-@bot.message_handler(commands=['faza_sutok'])
+@bot.message_handler(commands=['daytime'])
 def faza(msg):
     systime = datetime.now()
     if 6<= int(systime.strftime("%H")) < 9 or 12 <= int(systime.strftime("%H")) < 15 or 18 <= int(systime.strftime("%H")) < 21:
-        bot.send_message(msg.chat.id, day)
-    else:
         bot.send_message(msg.chat.id, night)
+    else:
+        bot.send_message(msg.chat.id, day)
 
 @bot.message_handler(content_types=['text'])
 def frwrdmess(msg):
