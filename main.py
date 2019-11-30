@@ -25,7 +25,7 @@ night = f'''Текущая фаза суток - 🌑Ночь.
 @bot.message_handler(commands=['faza_sutok'])
 def faza(msg):
     systime = datetime.now()
-    if 6<= systime.strftime("%H") < 9 or 12 <= systime.strftime("%H") < 15 or 18 <= systime.strftime("%H") < 21:
+    if 6<= int(systime.strftime("%H")) < 9 or 12 <= int(systime.strftime("%H")) < 15 or 18 <= int(systime.strftime("%H")) < 21:
         bot.send_message(msg.chat.id, day)
     else:
         bot.send_message(msg.chat.id, night)
