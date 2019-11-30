@@ -22,9 +22,21 @@ day = '''☀️День.
 night = '''🌑Ночь.
 Самое время убить кого-то из игроков и повысить свой ⚜️Ранг'''
 
+zeros = "00.00.00"
+threeam = "03.00.00"
+sixam = "06.00.00"
+nineam = "09.00.00"
+twelwe = "12.00.00"
+threepm = "15.00.00"
+sixpm = "18.00.00"
+ninepm = "21.00.00"
 @bot.message_handler(commands=['daytime'])
 def faza(msg):
     systime = datetime.now()
+    if threepm < systime.strftime("%H.%M.%S") > sixpm:
+        countfaza = threeam - systime.strftime("%H.%M.%S")
+        print(countfaza)
+    
     if 6<= int(systime.strftime("%H")) < 9 or 12 <= int(systime.strftime("%H")) < 15 or 18 <= int(systime.strftime("%H")) < 21:
         daypart = day
     else:
