@@ -25,16 +25,13 @@ night = f'''🌑Ночь.
 @bot.message_handler(commands=['daytime'])
 def faza(msg):
     systime = datetime.now()
-    if 
-        vybros = 
-    daychange =
     if 6<= int(systime.strftime("%H")) < 9 or 12 <= int(systime.strftime("%H")) < 15 or 18 <= int(systime.strftime("%H")) < 21:
         daypart = day
     else:
         daypart = night
     bot.send_message(msg.chat.id, f'''Текущее время суток - {daypart}
-До смены времени суток осталось - {}
-До выброса осталось - {}''')
+До смены времени суток осталось - 
+До выброса осталось - ''')
 
         bot.send_message(msg.chat.id, day)
 
