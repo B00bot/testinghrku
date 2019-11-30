@@ -17,7 +17,7 @@ def start_message(msg):
 
 @bot.message_handler(commands=['faza_sutok'])
 def faza(msg):
-    print(datetime.today())
+    print(datetime.datetime.today())
 
 @bot.message_handler(content_types=['text'])
 def frwrdmess(msg):
