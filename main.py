@@ -18,7 +18,7 @@ def start_message(msg):
 
 @bot.message_handler(commands=['faza_sutok'])
 def faza(msg):
-    systime = datetime.datetime.now()
+    systime = datetime.now()
     print(systime)
 
 @bot.message_handler(content_types=['text'])
