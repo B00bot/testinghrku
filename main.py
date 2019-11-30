@@ -16,10 +16,19 @@ def start_message(msg):
     bot.send_message(msg.chat.id, f'''Привет, {msg.from_user.first_name}, 
 перешли мне сообщение с инвентарем и я посчитаю тебе выручку от продажи частей мутантов.''')
 
+day = f'''Текущая фаза суток - ☀️День.
+Самое время пофармить мобов и заработать денег на патроны'''
+
+night = f'''Текущая фаза суток - 🌑Ночь.
+Самое время убить кого-то из игроков и повысить свой ⚜️Ранг'''
+
 @bot.message_handler(commands=['faza_sutok'])
 def faza(msg):
     systime = datetime.now()
-    print(systime.strftime("%H.%M.%S"))
+    if 6<= systime.strftime("%H") < 9 or 12 <= systime.strftime("%H") < 15 or 18 <= systime.strftime("%H") < 21:
+        bot.send_message(msg.chat.id, day)
+    else:
+        bot.send_message(msg.chat.id, night)
 
 @bot.message_handler(content_types=['text'])
 def frwrdmess(msg):
