@@ -41,9 +41,40 @@ def faza(msg):
         daypart = night
     else:
         daypart = day
+    if int(systime.strftime("%H")) < 3:
+        count_hours = 3 - int(systime.strftime("%H"))
+        count_minutes = 60 - int(systime.strftime("%M"))
+        count_seconds = 60 - int(systime.strftime("%S"))
+    elif 3 < int(systime.strftime("%H")) < 6:
+        count_hours = 6 - int(systime.strftime("%H"))
+        count_minutes = 60 - int(systime.strftime("%M"))
+        count_seconds = 60 - int(systime.strftime("%S"))
+    elif 6 < int(systime.strftime("%H")) < 9:
+        count_hours = 9 - int(systime.strftime("%H"))
+        count_minutes = 60 - int(systime.strftime("%M"))
+        count_seconds = 60 - int(systime.strftime("%S"))
+    elif 9 < int(systime.strftime("%H")) < 12:
+        count_hours = 12 - int(systime.strftime("%H"))
+        count_minutes = 60 - int(systime.strftime("%M"))
+        count_seconds = 60 - int(systime.strftime("%S"))
+    elif 12 < int(systime.strftime("%H")) < 15:
+        count_hours = 15 - int(systime.strftime("%H"))
+        count_minutes = 60 - int(systime.strftime("%M"))
+        count_seconds = 60 - int(systime.strftime("%S"))
+    elif 15 < int(systime.strftime("%H")) < 18:
+        count_hours = 18 - int(systime.strftime("%H"))
+        count_minutes = 60 - int(systime.strftime("%M"))
+        count_seconds = 60 - int(systime.strftime("%S"))
+    elif 18 < int(systime.strftime("%H")) < 21 :
+        count_hours = 21 - int(systime.strftime("%H"))
+        count_minutes = 60 - int(systime.strftime("%M"))
+        count_seconds = 60 - int(systime.strftime("%S"))
+    else:
+        count_hours = 24 - int(systime.strftime("%H"))
+        count_minutes = 60 - int(systime.strftime("%M"))
+        count_seconds = 60 - int(systime.strftime("%S"))
     bot.send_message(msg.chat.id, f'''Текущее время суток - {daypart}
-До смены времени суток осталось - 
-До выброса осталось - ''')
+До смены времени суток осталось - {count_hours}.{count_minutes}.{count_seconds}''')
 
 @bot.message_handler(content_types=['text'])
 def frwrdmess(msg):
