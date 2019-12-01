@@ -37,7 +37,7 @@ def faza(msg):
     print(systime.strftime("%H"))
     print(systime.strftime("%M"))
     print(systime.strftime("%S"))
-    if 6<= int(systime.strftime("%H")) < 9 or 12 <= int(systime.strftime("%H")) < 15 or 18 <= int(systime.strftime("%H")) < 21:
+    if  0 <= int(systime.strftime("%H")) <3 or 6<= int(systime.strftime("%H")) < 9 or 12 <= int(systime.strftime("%H")) < 15 or 18 <= int(systime.strftime("%H")) < 21:
         daypart = night
     else:
         daypart = day
