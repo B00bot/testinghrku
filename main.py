@@ -33,46 +33,35 @@ ninepm = "21.00.00"
 @bot.message_handler(commands=['daytime'])
 def faza(msg):
     systime = datetime.now()
-    print(systime.strftime("%H.%M.%S"))
-    print(systime.strftime("%H"))
-    print(systime.strftime("%M"))
-    print(systime.strftime("%S"))
     if  0 <= int(systime.strftime("%H")) <3 or 6<= int(systime.strftime("%H")) < 9 or 12 <= int(systime.strftime("%H")) < 15 or 18 <= int(systime.strftime("%H")) < 21:
         daypart = night
     else:
         daypart = day
+    if int(systime.strftime("%M")) < 10:
+        count_minutes ="0" + str(60 - int(systime.strftime("%M")))
+    else:
+        count_minutes = 60 - int(systime.strftime("%M"))
+    if int(systime.strftime("%S")) < 10:
+        count_seconds ="0" + str(60 - int(systime.strftime("%S")))
+    else:
+        count_secondals = 60 - int(systime.strftime("%S"))
+
     if int(systime.strftime("%H")) < 3:
         count_hours = 3 - int(systime.strftime("%H"))
-        count_minutes = 60 - int(systime.strftime("%M"))
-        count_seconds = 60 - int(systime.strftime("%S"))
     elif 3 < int(systime.strftime("%H")) < 6:
         count_hours = 6 - int(systime.strftime("%H"))
-        count_minutes = 60 - int(systime.strftime("%M"))
-        count_seconds = 60 - int(systime.strftime("%S"))
     elif 6 < int(systime.strftime("%H")) < 9:
         count_hours = 9 - int(systime.strftime("%H"))
-        count_minutes = 60 - int(systime.strftime("%M"))
-        count_seconds = 60 - int(systime.strftime("%S"))
     elif 9 < int(systime.strftime("%H")) < 12:
         count_hours = 12 - int(systime.strftime("%H"))
-        count_minutes = 60 - int(systime.strftime("%M"))
-        count_seconds = 60 - int(systime.strftime("%S"))
     elif 12 < int(systime.strftime("%H")) < 15:
         count_hours = 15 - int(systime.strftime("%H"))
-        count_minutes = 60 - int(systime.strftime("%M"))
-        count_seconds = 60 - int(systime.strftime("%S"))
     elif 15 < int(systime.strftime("%H")) < 18:
         count_hours = 18 - int(systime.strftime("%H"))
-        count_minutes = 60 - int(systime.strftime("%M"))
-        count_seconds = 60 - int(systime.strftime("%S"))
     elif 18 < int(systime.strftime("%H")) < 21 :
         count_hours = 21 - int(systime.strftime("%H"))
-        count_minutes = 60 - int(systime.strftime("%M"))
-        count_seconds = 60 - int(systime.strftime("%S"))
     else:
         count_hours = 24 - int(systime.strftime("%H"))
-        count_minutes = 60 - int(systime.strftime("%M"))
-        count_seconds = 60 - int(systime.strftime("%S"))
     bot.send_message(msg.chat.id, f'''Текущее время суток - {daypart}
 До смены времени суток осталось:
 ⏱️ {count_hours}.{count_minutes}.{count_seconds}''')
