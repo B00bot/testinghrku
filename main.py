@@ -29,11 +29,11 @@ def faza(msg):
         daypart = night
     else:
         daypart = day
-    if int(59 - systime.strftime("%M")) < 10:
+    if (59 - int(systime.strftime("%M"))) < 10:
         count_minutes =str(0) + str(59 - int(systime.strftime("%M")))
     else:
         count_minutes = 59 - int(systime.strftime("%M"))
-    if int(59 - systime.strftime("%S")) < 10:
+    if (59 - int(systime.strftime("%S"))) < 10:
         count_seconds =str(0) + str(59 - int(systime.strftime("%S")))
     else:
         count_seconds = 59 - int(systime.strftime("%S"))
