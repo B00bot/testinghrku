@@ -33,7 +33,7 @@ def faza(msg):
         count_minutes ="0" + str(59 - int(systime.strftime("%M")))
     else:
         count_minutes = 59 - int(systime.strftime("%M"))
-    if 10 > int(systime.strftime("%S")):
+    if 10 < int(systime.strftime("%S")):
         count_seconds ="0" + str(60 - int(systime.strftime("%S")))
     else:
         count_seconds = 60 - int(systime.strftime("%S"))
