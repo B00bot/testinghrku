@@ -39,9 +39,9 @@ def faza(msg):
     #print(systime.strftime("%H.%M.%S"))
     
     if 6<= int(systime.strftime("%H")) < 9 or 12 <= int(systime.strftime("%H")) < 15 or 18 <= int(systime.strftime("%H")) < 21:
-        daypart = day
-    else:
         daypart = night
+    else:
+        daypart = day
     bot.send_message(msg.chat.id, f'''Текущее время суток - {daypart}
 До смены времени суток осталось - 
 До выброса осталось - ''')
