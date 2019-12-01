@@ -74,7 +74,8 @@ def faza(msg):
         count_minutes = 60 - int(systime.strftime("%M"))
         count_seconds = 60 - int(systime.strftime("%S"))
     bot.send_message(msg.chat.id, f'''Текущее время суток - {daypart}
-До смены времени суток осталось - {count_hours}.{count_minutes}.{count_seconds}''')
+До смены времени суток осталось:
+⏱️ {count_hours}.{count_minutes}.{count_seconds}''')
 
 @bot.message_handler(content_types=['text'])
 def frwrdmess(msg):
