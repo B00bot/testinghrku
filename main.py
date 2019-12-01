@@ -22,14 +22,6 @@ day = '''☀️День.
 night = '''🌑Ночь.
 Самое время убить кого-то из игроков и повысить свой ⚜️Ранг'''
 
-zeros = "00.00.00"
-threeam = "03.00.00"
-sixam = "06.00.00"
-nineam = "09.00.00"
-twelwe = "12.00.00"
-threepm = "15.00.00"
-sixpm = "18.00.00"
-ninepm = "21.00.00"
 @bot.message_handler(commands=['daytime'])
 def faza(msg):
     systime = datetime.now()
@@ -44,8 +36,7 @@ def faza(msg):
     if int(systime.strftime("%S")) < 10:
         count_seconds ="0" + str(60 - int(systime.strftime("%S")))
     else:
-        count_secondals = 60 - int(systime.strftime("%S"))
-
+        count_seconds = 60 - int(systime.strftime("%S"))
     if int(systime.strftime("%H")) < 3:
         count_hours = 3 - int(systime.strftime("%H"))
     elif 3 < int(systime.strftime("%H")) < 6:
