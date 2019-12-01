@@ -33,11 +33,10 @@ ninepm = "21.00.00"
 @bot.message_handler(commands=['daytime'])
 def faza(msg):
     systime = datetime.now()
-    #if threepm < systime.strftime("%H.%M.%S") > sixpm:
-        #countfaza = threeam - systime.strftime("%H.%M.%S")
-        #print(countfaza)
-    #print(systime.strftime("%H.%M.%S"))
-    
+    print(systime.strftime("%H.%M.%S"))
+    print(systime.strftime("%H"))
+    print(systime.strftime("%M"))
+    print(systime.strftime("%S"))
     if 6<= int(systime.strftime("%H")) < 9 or 12 <= int(systime.strftime("%H")) < 15 or 18 <= int(systime.strftime("%H")) < 21:
         daypart = night
     else:
