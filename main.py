@@ -34,7 +34,7 @@ def faza(msg):
     else:
         count_minutes = 59 - int(systime.strftime("%M"))
     if int(systime.strftime("%S")) < 10:
-        count_seconds =str(0) + str(60 - int(systime.strftime("%S")))
+        count_seconds =str(0) + str(59 - int(systime.strftime("%S")))
     else:
         count_seconds = 59 - int(systime.strftime("%S"))
     if int(systime.strftime("%H")) < 3:
