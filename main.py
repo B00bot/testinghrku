@@ -125,93 +125,207 @@ def frwrdmess(msg):
                     poltergeist_heart_q = 0.0
                 artefacts_q = 0.0
                 if messtext.find('''«Пузырь»''') != -1:
-                    artefacts = float(re.search(r'''«Пузырь»\s(\d+)\sшт''' , messtext).group(1))
-                    artefacts_q += artefacts
+                    a = messtext.find('''«Пузырь»''')
+                    b = messtext.rfind('''«Пузырь»''')
+                    if a == b:
+                        artefacts = float(re.search(r'''«Пузырь»\s(\d+)\sшт''' , messtext).group(1))
+                        artefacts_q += artefacts
+                    else:
+                        arts = re.findall(r'''«Пузырь»\s(\d+)\sшт''' , messtext)
+                        artefacts = float(arts[0]) + float(arts[1])
+                        artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
                 if messtext.find('''«Грави»''') != -1:
-                    artefacts = float(re.search(r'''«Грави»\s(\d+)\sшт''' , messtext).group(1))
-                    artefacts_q += artefacts
+                    a = messtext.find('''«Грави»''')
+                    b = messtext.rfind('''«Грави»''')
+                    if a == b:
+                        artefacts = float(re.search(r'''«Грави»\s(\d+)\sшт''' , messtext).group(1))
+                        artefacts_q += artefacts
+                    else:
+                        arts = re.findall(r'''«Грави»\s(\d+)\sшт''' , messtext)
+                        artefacts = float(arts[0]) + float(arts[1])
+                        artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
                 if messtext.find('''«Ломоть мяса»''') != -1:
-                    artefacts = float(re.search(r'''«Ломоть мяса»\s(\d+)\sшт''' , messtext).group(1))
-                    artefacts_q += artefacts
+                    a = messtext.find('''«Ломоть мяса»''')
+                    b = messtext.rfind('''«Ломоть мяса»''')
+                    if a == b:
+                        artefacts = float(re.search(r'''«Ломоть мяса»\s(\d+)\sшт''' , messtext).group(1))
+                        artefacts_q += artefacts
+                    else:
+                        arts = re.findall(r'''«Ломоть мяса»\s(\d+)\sшт''' , messtext)
+                        artefacts = float(arts[0]) + float(arts[1])
+                        artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
                 if messtext.find('''«Медуза»''') != -1:
-                    artefacts = float(re.search(r'''«Медуза»\s(\d+)\sшт''' , messtext).group(1))
-                    artefacts_q += artefacts
+                    a = messtext.find('''«Медуза»''')
+                    b = messtext.rfind('''«Медуза»''')
+                    if a == b:
+                        artefacts = float(re.search(r'''«Медуза»\s(\d+)\sшт''' , messtext).group(1))
+                        artefacts_q += artefacts
+                    else:
+                        arts = re.findall(r'''«Медуза»\s(\d+)\sшт''' , messtext)
+                        artefacts = float(arts[0]) + float(arts[1])
+                        artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
                 if messtext.find('''«Пламя»''') != -1:
-                    artefacts = float(re.search(r'''«Пламя»\s(\d+)\sшт''' , messtext).group(1))
-                    artefacts_q += artefacts
+                    a = messtext.find('''«Пламя»''')
+                    b = messtext.rfind('''«Пламя»''')
+                    if a == b:
+                        artefacts = float(re.search(r'''«Пламя»\s(\d+)\sшт''' , messtext).group(1))
+                        artefacts_q += artefacts
+                    else:
+                        arts = re.findall(r'''«Пламя»\s(\d+)\sшт''' , messtext)
+                        artefacts = float(arts[0]) + float(arts[1])
+                        artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
                 if messtext.find('''«Ночная звезда»''') != -1:
-                    artefacts = float(re.search(r'''«Ночная звезда»\s(\d+)\sшт''' , messtext).group(1))
-                    artefacts_q += artefacts
+                    a = messtext.find('''«Ночная звезда»''')
+                    b = messtext.rfind('''«Ночная звезда»''')
+                    if a == b:
+                        artefacts = float(re.search(r'''«Ночная звезда»\s(\d+)\sшт''' , messtext).group(1))
+                        artefacts_q += artefacts
+                    else:
+                        arts = re.findall(r'''«Ночная звезда»\s(\d+)\sшт''' , messtext)
+                        artefacts = float(arts[0]) + float(arts[1])
+                        artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
                 if messtext.find('''«Бенгальский огонь»''') != -1:
-                    artefacts = float(re.search(r'''«Бенгальский огонь»\s(\d+)\sшт''' , messtext).group(1))
-                    artefacts_q += artefacts
+                    a = messtext.find('''«Бенгальский огонь»''')
+                    b = messtext.rfind('''«Бенгальский огонь»''')
+                    if a == b:
+                        artefacts = float(re.search(r'''«Бенгальский огонь»\s(\d+)\sшт''' , messtext).group(1))
+                        artefacts_q += artefacts
+                    else:
+                        arts = re.findall(r'''«Бенгальский огонь»\s(\d+)\sшт''' , messtext)
+                        artefacts = float(arts[0]) + float(arts[1])
+                        artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
                 if messtext.find('''«Душа»''') != -1:
-                    artefacts = float(re.search(r'''«Душа»\s(\d+)\sшт''' , messtext).group(1))
-                    artefacts_q += artefacts
+                    a = messtext.find('''«Душа»''')
+                    b = messtext.rfind('''«Душа»''')
+                    if a == b:
+                        artefacts = float(re.search(r'''«Душа»\s(\d+)\sшт''' , messtext).group(1))
+                        artefacts_q += artefacts
+                    else:
+                        arts = re.findall(r'''«Душа»\s(\d+)\sшт''' , messtext)
+                        artefacts = float(arts[0]) + float(arts[1])
+                        artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
                 if messtext.find('''«Снежинка»''') != -1:
-                    artefacts = float(re.search(r'''«Снежинка»\s(\d+)\sшт''' , messtext).group(1))
-                    artefacts_q += artefacts
+                    a = messtext.find('''«Снежинка»''')
+                    b = messtext.rfind('''«Снежинка»''')
+                    if a == b:
+                        artefacts = float(re.search(r'''«Снежинка»\s(\d+)\sшт''' , messtext).group(1))
+                        artefacts_q += artefacts
+                    else:
+                        arts = re.findall(r'''«Снежинка»\s(\d+)\sшт''' , messtext)
+                        artefacts = float(arts[0]) + float(arts[1])
+                        artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
                 if messtext.find('''«Выверт»''') != -1:
-                    artefacts = float(re.search(r'''«Выверт»\s(\d+)\sшт''' , messtext).group(1))
-                    artefacts_q += artefacts
+                    a = messtext.find('''«Выверт»''')
+                    b = messtext.rfind('''«Выверт»''')
+                    if a == b:
+                        artefacts = float(re.search(r'''«Выверт»\s(\d+)\sшт''' , messtext).group(1))
+                        artefacts_q += artefacts
+                    else:
+                        arts = re.findall(r'''«Выверт»\s(\d+)\sшт''' , messtext)
+                        artefacts = float(arts[0]) + float(arts[1])
+                        artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
                 if messtext.find('''«Кристалл»''') != -1:
-                    artefacts = float(re.search(r'''«Кристалл»\s(\d+)\sшт''' , messtext).group(1))
-                    artefacts_q += artefacts
+                    a = messtext.find('''«Кристалл»''')
+                    b = messtext.rfind('''«Кристалл»''')
+                    if a == b:
+                        artefacts = float(re.search(r'''«Кристалл»\s(\d+)\sшт''' , messtext).group(1))
+                        artefacts_q += artefacts
+                    else:
+                        arts = re.findall(r'''«Кристалл»\s(\d+)\sшт''' , messtext)
+                        artefacts = float(arts[0]) + float(arts[1])
+                        artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
                 if messtext.find('''«Слизь»''') != -1:
-                    artefacts = float(re.search(r'''«Слизь»\s(\d+)\sшт''' , messtext).group(1))
-                    artefacts_q += artefacts
-                else:
-                    artefacts_q += 0.0
-                if messtext.find('''«Слизь»''') != -1:
-                    artefacts = float(re.search(r'''«Слизь»\s(\d+)\sшт''' , messtext).group(2))
-                    artefacts_q += artefacts
+                    a = messtext.find('''«Слизь»''')
+                    b = messtext.rfind('''«Слизь»''')
+                    if a == b:
+                        artefacts = float(re.search(r'''«Слизь»\s(\d+)\sшт''' , messtext).group(1))
+                        artefacts_q += artefacts
+                    else:
+                        arts = re.findall(r'''«Слизь»\s(\d+)\sшт''' , messtext)
+                        artefacts = float(arts[0]) + float(arts[1])
+                        artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
                 if messtext.find('''«Мамины бусы»''') != -1:
-                    artefacts = float(re.search(r'''«Мамины бусы»\s(\d+)\sшт''' , messtext).group(1))
-                    artefacts_q += artefacts
+                    a = messtext.find('''«Мамины бусы»''')
+                    b = messtext.rfind('''«Мамины бусы»''')
+                    if a == b:
+                        artefacts = float(re.search(r'''«Мамины бусы»\s(\d+)\sшт''' , messtext).group(1))
+                        artefacts_q += artefacts
+                    else:
+                        arts = re.findall(r'''«Мамины бусы»\s(\d+)\sшт''' , messtext)
+                        artefacts = float(arts[0]) + float(arts[1])
+                        artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
                 if messtext.find('''«Батарейка»''') != -1:
-                    artefacts = float(re.search(r'''«Батарейка»\s(\d+)\sшт''' , messtext).group(1))
-                    artefacts_q += artefacts
+                    a = messtext.find('''«Батарейка»''')
+                    b = messtext.rfind('''«Батарейка»''')
+                    if a == b:
+                        artefacts = float(re.search(r'''«Батарейка»\s(\d+)\sшт''' , messtext).group(1))
+                        artefacts_q += artefacts
+                    else:
+                        arts = re.findall(r'''«Батарейка»\s(\d+)\sшт''' , messtext)
+                        artefacts = float(arts[0]) + float(arts[1])
+                        artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
                 if messtext.find('''«Пустышка»''') != -1:
-                    artefacts = float(re.search(r'''«Пустышка»\s(\d+)\sшт''' , messtext).group(1))
-                    artefacts_q += artefacts
+                    a = messtext.find('''«Пустышка»''')
+                    b = messtext.rfind('''«Пустышка»''')
+                    if a == b:
+                        artefacts = float(re.search(r'''«Пустышка»\s(\d+)\sшт''' , messtext).group(1))
+                        artefacts_q += artefacts
+                    else:
+                        arts = re.findall(r'''«Пустышка»\s(\d+)\sшт''' , messtext)
+                        artefacts = float(arts[0]) + float(arts[1])
+                        artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
                 if messtext.find('''«Вспышка»''') != -1:
-                    artefacts = float(re.search(r'''«Вспышка»\s(\d+)\sшт''' , messtext).group(1))
-                    artefacts_q += artefacts
+                    a = messtext.find('''«Вспышка»''')
+                    b = messtext.rfind('''«Вспышка»''')
+                    if a == b:
+                        artefacts = float(re.search(r'''«Вспышка»\s(\d+)\sшт''' , messtext).group(1))
+                        artefacts_q += artefacts
+                    else:
+                        arts = re.findall(r'''«Вспышка»\s(\d+)\sшт''' , messtext)
+                        artefacts = float(arts[0]) + float(arts[1])
+                        artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
                 if messtext.find('''«Капли»''') != -1:
-                    artefacts = float(re.search(r'''«Капли»\s(\d+)\sшт''' , messtext).group(1))
-                    artefacts_q += artefacts
+                    a = messtext.find('''«Капли»''')
+                    b = messtext.rfind('''«Капли»''')
+                    if a == b:
+                        artefacts = float(re.search(r'''«Капли»\s(\d+)\sшт''' , messtext).group(1))
+                        artefacts_q += artefacts
+                    else:
+                        arts = re.findall(r'''«Капли»\s(\d+)\sшт''' , messtext)
+                        artefacts = float(arts[0]) + float(arts[1])
+                        artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
                 if messtext.find('''«Лунный свет»''') != -1:
@@ -223,43 +337,91 @@ def frwrdmess(msg):
                     else:
                         arts = re.findall(r'''«Лунный свет»\s(\d+)\sшт''' , messtext)
                         artefacts = float(arts[0]) + float(arts[1])
-                        print(artefacts)
                         artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
                 if messtext.find('''«Огненный шар»''') != -1:
-                    artefacts = float(re.search(r'''«Огненный шар»\s(\d+)\sшт''' , messtext).group(1))
-                    artefacts_q += artefacts
+                    a = messtext.find('''«Огненный шар»''')
+                    b = messtext.rfind('''«Огненный шар»''')
+                    if a == b:
+                        artefacts = float(re.search(r'''«Огненный шар»\s(\d+)\sшт''' , messtext).group(1))
+                        artefacts_q += artefacts
+                    else:
+                        arts = re.findall(r'''«Огненный шар»\s(\d+)\sшт''' , messtext)
+                        artefacts = float(arts[0]) + float(arts[1])
+                        artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
                 if messtext.find('''«Кровь камня»''') != -1:
-                    artefacts = float(re.search(r'''«Кровь камня»\s(\d+)\sшт''' , messtext).group(1))
-                    artefacts_q += artefacts
+                    a = messtext.find('''«Кровь камня»''')
+                    b = messtext.rfind('''«Кровь камня»''')
+                    if a == b:
+                        artefacts = float(re.search(r'''«Кровь камня»\s(\d+)\sшт''' , messtext).group(1))
+                        artefacts_q += artefacts
+                    else:
+                        arts = re.findall(r'''«Кровь камня»\s(\d+)\sшт''' , messtext)
+                        artefacts = float(arts[0]) + float(arts[1])
+                        artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
                 if messtext.find('''«Золотая рыбка»''') != -1:
-                    artefacts = float(re.search(r'''«Золотая рыбка»\s(\d+)\sшт''' , messtext).group(1))
-                    artefacts_q += artefacts
+                    a = messtext.find('''«Золотая рыбка»''')
+                    b = messtext.rfind('''«Золотая рыбка»''')
+                    if a == b:
+                        artefacts = float(re.search(r'''«Золотая рыбка»\s(\d+)\sшт''' , messtext).group(1))
+                        artefacts_q += artefacts
+                    else:
+                        arts = re.findall(r'''«Золотая рыбка»\s(\d+)\sшт''' , messtext)
+                        artefacts = float(arts[0]) + float(arts[1])
+                        artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
                 if messtext.find('''«Каменный цветок»''') != -1:
-                    artefacts = float(re.search(r'''«Каменный цветок»\s(\d+)\sшт''' , messtext).group(1))
-                    artefacts_q += artefacts
+                    a = messtext.find('''«Каменный цветок»''')
+                    b = messtext.rfind('''«Каменный цветок»''')
+                    if a == b:
+                        artefacts = float(re.search(r'''«Каменный цветок»\s(\d+)\sшт''' , messtext).group(1))
+                        artefacts_q += artefacts
+                    else:
+                        arts = re.findall(r'''«Каменный цветок»\s(\d+)\sшт''' , messtext)
+                        artefacts = float(arts[0]) + float(arts[1])
+                        artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
                 if messtext.find('''«Слюда»''') != -1:
-                    artefacts = float(re.search(r'''«Слюда»\s(\d+)\sшт''' , messtext).group(1))
-                    artefacts_q += artefacts
+                    a = messtext.find('''«Слюда»''')
+                    b = messtext.rfind('''«Слюда»''')
+                    if a == b:
+                        artefacts = float(re.search(r'''«Слюда»\s(\d+)\sшт''' , messtext).group(1))
+                        artefacts_q += artefacts
+                    else:
+                        arts = re.findall(r'''«Слюда»\s(\d+)\sшт''' , messtext)
+                        artefacts = float(arts[0]) + float(arts[1])
+                        artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
                 if messtext.find('''«Глаз»''') != -1:
-                    artefacts = float(re.search(r'''«Глаз»\s(\d+)\sшт''' , messtext).group(1))
-                    artefacts_q += artefacts
+                    a = messtext.find('''«Глаз»''')
+                    b = messtext.rfind('''«Глаз»''')
+                    if a == b:
+                        artefacts = float(re.search(r'''«Глаз»\s(\d+)\sшт''' , messtext).group(1))
+                        artefacts_q += artefacts
+                    else:
+                        arts = re.findall(r'''«Глаз»\s(\d+)\sшт''' , messtext)
+                        artefacts = float(arts[0]) + float(arts[1])
+                        artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
                 if messtext.find('''«Слизняк»''') != -1:
-                    artefacts = float(re.search(r'''«Слизняк»\s(\d+)\sшт''' , messtext).group(1))
-                    artefacts_q += artefacts
+                    a = messtext.find('''«Слизняк»''')
+                    b = messtext.rfind('''«Слизняк»''')
+                    if a == b:
+                        artefacts = float(re.search(r'''«Слизняк»\s(\d+)\sшт''' , messtext).group(1))
+                        artefacts_q += artefacts
+                    else:
+                        arts = re.findall(r'''«Слизняк»\s(\d+)\sшт''' , messtext)
+                        artefacts = float(arts[0]) + float(arts[1])
+                        artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
                 gesheft = (dog_tail_q * 50.0) + (zombie_hand_q * 62.5) + (hog_hoof_q * 100.0) + (sucker_leg_q * 125.0) + (snork_foot_q * 150.0) + (jerboa_head_q * 166.5) + (snork_head_q * 200.0) + (burer_leg_q * 375.0) + (controler_hand_q * 625.0) + (burer_hand_q * 625.0) + (sucker_tentacle_q * 750.0) + (pseudo_giant_q * 750) + ( controler_brain_q * 1250) + (chimera_claw_q * 1250) + (poltergeist_heart_q * 1875.0)
