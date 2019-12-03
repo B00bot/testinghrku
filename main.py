@@ -261,10 +261,10 @@ def frwrdmess(msg):
                 a_gesheft_premium_a = a_gesheft * 1.1
                 a_gesheft_premium_b = a_gesheft * 1.25
                 a_gesheft_premium_c = a_gesheft * 1.45
-                sum_getheft = a_gesheft + gesheft_science
-                sum_getheft_premium_a = sum_gesheft * 1.1
-                sum_getheft_premium_b = sum_gesheft * 1.25
-                sum_getheft_premium_c = sum_gesheft * 1.45
+                sum_gesheft = a_gesheft + gesheft_science
+                sum_gesheft_premium_a = sum_gesheft * 1.1
+                sum_gesheft_premium_b = sum_gesheft * 1.25
+                sum_gesheft_premium_c = sum_gesheft * 1.45
                 bot.send_message(msg.chat.id, f'''Выручка от продажи частей мутантов составит:
                 
 если продавать торговцу
@@ -285,9 +285,9 @@ def frwrdmess(msg):
 {int(a_gesheft_premium_c)}💰 с премиум статусом γ
 Суммарная прибыль составит:
 {int(sum_gesheft)}💰 без премиум аккаунта
-{int(sum_getheft_premium_a)}💰 с премиум статусом α
-{int(sum_getheft_premium_b)}💰 с премиум статусом β
-{int(sum_getheft_premium_c)}💰 с премиум статусом γ
+{int(sum_gesheft_premium_a)}💰 с премиум статусом α
+{int(sum_gesheft_premium_b)}💰 с премиум статусом β
+{int(sum_gesheft_premium_c)}💰 с премиум статусом γ
 Удачи, сталкер''')
             else:
                 bot.send_message(msg.chat.id, '''Разве это инвентарь?''')
