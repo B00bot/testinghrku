@@ -124,7 +124,7 @@ def frwrdmess(msg):
                 else:
                     poltergeist_heart_q = 0.0
                 if messtext.find('''«Пламя»''') != -1:
-                    artefacts_q = artefacts_q + float(re.search(r'''«Пламя»\s(\d+)\sшт''' , messtext).group(1))
+                    artefacts_q += float(re.search(r'''«Пламя»\s(\d+)\sшт''' , messtext).group(1))
                 else:
                     artefacts_q = artefacts_q + 0.0
                 gesheft = (dog_tail_q * 50.0) + (zombie_hand_q * 62.5) + (hog_hoof_q * 100.0) + (sucker_leg_q * 125.0) + (snork_foot_q * 150.0) + (jerboa_head_q * 166.5) + (snork_head_q * 200.0) + (burer_leg_q * 375.0) + (controler_hand_q * 625.0) + (burer_hand_q * 625.0) + (sucker_tentacle_q * 750.0) + (pseudo_giant_q * 750) + ( controler_brain_q * 1250) + (chimera_claw_q * 1250) + (poltergeist_heart_q * 1875.0)
