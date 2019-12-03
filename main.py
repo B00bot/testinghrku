@@ -195,6 +195,11 @@ def frwrdmess(msg):
                 else:
                     artefacts_q += 0.0
                 if messtext.find('''«Душа»''') != -1:
+                    artefacts = float(re.search(r'''«Душа»\s(\d+)\sшт''' , messtext).group(0))
+                    artefacts_q += artefacts
+                else:
+                    artefacts_q += 0.0
+                if messtext.find('''«Душа»''') != -1:
                     artefacts = float(re.search(r'''«Душа»\s(\d+)\sшт''' , messtext).group(1))
                     artefacts_q += artefacts
                 else:
@@ -290,12 +295,12 @@ def frwrdmess(msg):
                 else:
                     artefacts_q += 0.0
                 if messtext.find('''«Лунный свет»''') != -1:
-                    artefacts = float(re.search(r'''«Лунный свет»\s(\d+)\sшт''' , messtext).group(1))
+                    artefacts = float(re.search(r'''«Лунный свет»\s(\d+)\sшт''' , messtext).group(0))
                     artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
                 if messtext.find('''«Лунный свет»''') != -1:
-                    artefacts = float(re.search(r'''«Лунный свет»\s(\d+)\sшт''' , messtext).group(2))
+                    artefacts = float(re.search(r'''«Лунный свет»\s(\d+)\sшт''' , messtext).group(1))
                     artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
