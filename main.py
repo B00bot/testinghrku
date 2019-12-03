@@ -279,7 +279,7 @@ def frwrdmess(msg):
                     artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
-                f messtext.find('''«Вспышка»''') != -1:
+                if messtext.find('''«Вспышка»''') != -1:
                     artefacts = float(re.search(r'''«Вспышка»\s(\d+)\sшт''' , messtext).group(2))
                     artefacts_q += artefacts
                 else:
