@@ -221,9 +221,13 @@ def frwrdmess(msg):
                         artefacts = float(re.search(r'''«Лунный свет»\s(\d+)\sшт''' , messtext).group(1))
                         artefacts_q += artefacts
                     else:
-                        arts = re.findall(r'''«Лунный свет»\s(\d+)\sшт''' , messtext).group(1))
-                        artefacts = float(arts[0]) + arts[1]
+                        arts = re.findall(r'''«Лунный свет»\s(\d+)\sшт''' , messtext)
+                        c = float(re.search(r'''«Лунный свет»\s(\d+)\sшт''' , arts[0]).group(1))
+                        d = float(re.search(r'''«Лунный свет»\s(\d+)\sшт''' , arts[1]).group(1))
+                        artefacts = c + d
                         print(arts)
+                        print(c)
+                        print(d)
                         print(artefacts)
                         artefacts_q += artefacts
                 else:
