@@ -123,7 +123,7 @@ def frwrdmess(msg):
                     poltergeist_heart_q = float(re.search(r'''Сердце 🔥Полтергейста\s(\d+)\sшт''' , messtext).group(1))
                 else:
                     poltergeist_heart_q = 0.0
-                artefacts = 0.0
+                artefacts_q = 0.0
                 if messtext.find('''«Пламя»''') != -1:
                     artefacts = float(re.search(r'''«Пламя»\s(\d+)\sшт''' , messtext).group(1))
                     artefacts_q += artefacts
