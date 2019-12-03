@@ -55,7 +55,7 @@ def faza(msg):
         count_hours = 23 - int(systime.strftime("%H"))
     bot.send_message(msg.chat.id, f'''Текущее время суток - {daypart}
 До смены времени суток осталось:
-⏱️ {count_hours}.{count_minutes}.{count_seconds}''')
+⏱️ {count_hours}ч.{count_minutes}м.{count_seconds}с.''')
 
 @bot.message_handler(content_types=['text'])
 def frwrdmess(msg):
@@ -123,6 +123,10 @@ def frwrdmess(msg):
                     poltergeist_heart_q = float(re.search(r'''Сердце 🔥Полтергейста\s(\d+)\sшт''' , messtext).group(1))
                 else:
                     poltergeist_heart_q = 0.0
+                if messtext.find('''«Пламя»''') != -1:
+                    artefacts_q = artefacts_q + float(re.search(r'''«Пламя»\s(\d+)\sшт''' , messtext).group(1))
+                else:
+                    artefacts_q = artefacts_q + 0.0
                 gesheft = (dog_tail_q * 50.0) + (zombie_hand_q * 62.5) + (hog_hoof_q * 100.0) + (sucker_leg_q * 125.0) + (snork_foot_q * 150.0) + (jerboa_head_q * 166.5) + (snork_head_q * 200.0) + (burer_leg_q * 375.0) + (controler_hand_q * 625.0) + (burer_hand_q * 625.0) + (sucker_tentacle_q * 750.0) + (pseudo_giant_q * 750) + ( controler_brain_q * 1250) + (chimera_claw_q * 1250) + (poltergeist_heart_q * 1875.0)
                 gesheft_science = gesheft * 4
                 gesheft_premium_a = gesheft * 1.1
@@ -131,6 +135,7 @@ def frwrdmess(msg):
                 gesheft_science_premium_a = gesheft_science * 1.1
                 gesheft_science_premium_b = gesheft_science * 1.25
                 gesheft_science_premium_c = gesheft_science * 1.45
+                a_gesheft = artefacts_q * 5000
                 bot.send_message(msg.chat.id, f'''Выручка от продажи частей мутантов составит:
                 
 если продавать торговцу
@@ -144,7 +149,8 @@ def frwrdmess(msg):
 {int(gesheft_science_premium_a)}💰 с премиум статусом α
 {int(gesheft_science_premium_b)}💰 с премиум статусом β
 {int(gesheft_science_premium_c)}💰 с премиум статусом γ
-
+Прибыль от продажи артефактов составит:
+{int(a_gesheft)}💰 без премиум аккаунта
 Удачи, сталкер''')
             else:
                 bot.send_message(msg.chat.id, '''Разве это инвентарь?''')
@@ -167,3 +173,4 @@ if __name__ == '__main__':
     bot.set_webhook(url=f'{URLHEROKU}' + TOKEN)
     print(bot.get_webhook_info().__dict__)
     server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
+
