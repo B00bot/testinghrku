@@ -124,11 +124,131 @@ def frwrdmess(msg):
                 else:
                     poltergeist_heart_q = 0.0
                 artefacts_q = 0.0
+                if messtext.find('''«Пузырь»''') != -1:
+                    artefacts = float(re.search(r'''«Пузырь»\s(\d+)\sшт''' , messtext).group(1))
+                    artefacts_q += artefacts
+                else:
+                    artefacts_q += 0.0
+                if messtext.find('''«Грави»''') != -1:
+                    artefacts = float(re.search(r'''«Грави»\s(\d+)\sшт''' , messtext).group(1))
+                    artefacts_q += artefacts
+                else:
+                    artefacts_q += 0.0
+                if messtext.find('''«Ломоть мяса»''') != -1:
+                    artefacts = float(re.search(r'''«Ломоть мяса»\s(\d+)\sшт''' , messtext).group(1))
+                    artefacts_q += artefacts
+                else:
+                    artefacts_q += 0.0
+                if messtext.find('''«Медуза»''') != -1:
+                    artefacts = float(re.search(r'''«Медуза»\s(\d+)\sшт''' , messtext).group(1))
+                    artefacts_q += artefacts
+                else:
+                    artefacts_q += 0.0
                 if messtext.find('''«Пламя»''') != -1:
                     artefacts = float(re.search(r'''«Пламя»\s(\d+)\sшт''' , messtext).group(1))
                     artefacts_q += artefacts
                 else:
-                    artefacts_q = artefacts + 0.0
+                    artefacts_q += 0.0
+                if messtext.find('''«Ночная звезда»''') != -1:
+                    artefacts = float(re.search(r'''«Ночная звезда»\s(\d+)\sшт''' , messtext).group(1))
+                    artefacts_q += artefacts
+                else:
+                    artefacts_q += 0.0
+                if messtext.find('''«Бенгальский огонь»''') != -1:
+                    artefacts = float(re.search(r'''«Бенгальский огонь»\s(\d+)\sшт''' , messtext).group(1))
+                    artefacts_q += artefacts
+                else:
+                    artefacts_q += 0.0
+                if messtext.find('''«Душа»''') != -1:
+                    artefacts = float(re.search(r'''«Душа»\s(\d+)\sшт''' , messtext).group(1))
+                    artefacts_q += artefacts
+                else:
+                    artefacts_q += 0.0
+                if messtext.find('''«Снежинка»''') != -1:
+                    artefacts = float(re.search(r'''«Снежинка»\s(\d+)\sшт''' , messtext).group(1))
+                    artefacts_q += artefacts
+                else:
+                    artefacts_q += 0.0
+                if messtext.find('''«Выверт»''') != -1:
+                    artefacts = float(re.search(r'''«Выверт»\s(\d+)\sшт''' , messtext).group(1))
+                    artefacts_q += artefacts
+                else:
+                    artefacts_q += 0.0
+                if messtext.find('''«Кристалл»''') != -1:
+                    artefacts = float(re.search(r'''«Кристалл»\s(\d+)\sшт''' , messtext).group(1))
+                    artefacts_q += artefacts
+                else:
+                    artefacts_q += 0.0
+                if messtext.find('''«Слизь»''') != -1:
+                    artefacts = float(re.search(r'''«Слизь»\s(\d+)\sшт''' , messtext).group(1))
+                    artefacts_q += artefacts
+                else:
+                    artefacts_q += 0.0
+                if messtext.find('''«Мамины бусы»''') != -1:
+                    artefacts = float(re.search(r'''«Мамины бусы»\s(\d+)\sшт''' , messtext).group(1))
+                    artefacts_q += artefacts
+                else:
+                    artefacts_q += 0.0
+                if messtext.find('''«Батарейка»''') != -1:
+                    artefacts = float(re.search(r'''«Батарейка»\s(\d+)\sшт''' , messtext).group(1))
+                    artefacts_q += artefacts
+                else:
+                    artefacts_q += 0.0
+                if messtext.find('''«Пустышка»''') != -1:
+                    artefacts = float(re.search(r'''«Пустышка»\s(\d+)\sшт''' , messtext).group(1))
+                    artefacts_q += artefacts
+                else:
+                    artefacts_q += 0.0
+                if messtext.find('''«Вспышка»''') != -1:
+                    artefacts = float(re.search(r'''«Вспышка»\s(\d+)\sшт''' , messtext).group(1))
+                    artefacts_q += artefacts
+                else:
+                    artefacts_q += 0.0
+                if messtext.find('''«Капли»''') != -1:
+                    artefacts = float(re.search(r'''«Капли»\s(\d+)\sшт''' , messtext).group(1))
+                    artefacts_q += artefacts
+                else:
+                    artefacts_q += 0.0
+                if messtext.find('''«Лунный свет»''') != -1:
+                    artefacts = float(re.search(r'''«Лунный свет»\s(\d+)\sшт''' , messtext).group(1))
+                    artefacts_q += artefacts
+                else:
+                    artefacts_q += 0.0
+                if messtext.find('''«Огненный шар»''') != -1:
+                    artefacts = float(re.search(r'''«Огненный шар»\s(\d+)\sшт''' , messtext).group(1))
+                    artefacts_q += artefacts
+                else:
+                    artefacts_q += 0.0
+                if messtext.find('''«Кровь камня»''') != -1:
+                    artefacts = float(re.search(r'''«Кровь камня»\s(\d+)\sшт''' , messtext).group(1))
+                    artefacts_q += artefacts
+                else:
+                    artefacts_q += 0.0
+                if messtext.find('''«Золотая рыбка»''') != -1:
+                    artefacts = float(re.search(r'''«Золотая рыбка»\s(\d+)\sшт''' , messtext).group(1))
+                    artefacts_q += artefacts
+                else:
+                    artefacts_q += 0.0
+                if messtext.find('''«Каменный цветок»''') != -1:
+                    artefacts = float(re.search(r'''«Каменный цветок»\s(\d+)\sшт''' , messtext).group(1))
+                    artefacts_q += artefacts
+                else:
+                    artefacts_q += 0.0
+                if messtext.find('''«Слюда»''') != -1:
+                    artefacts = float(re.search(r'''«Слюда»\s(\d+)\sшт''' , messtext).group(1))
+                    artefacts_q += artefacts
+                else:
+                    artefacts_q += 0.0
+                if messtext.find('''«Глаз»''') != -1:
+                    artefacts = float(re.search(r'''«Глаз»\s(\d+)\sшт''' , messtext).group(1))
+                    artefacts_q += artefacts
+                else:
+                    artefacts_q += 0.0
+                if messtext.find('''«Слизняк»''') != -1:
+                    artefacts = float(re.search(r'''«Слизняк»\s(\d+)\sшт''' , messtext).group(1))
+                    artefacts_q += artefacts
+                else:
+                    artefacts_q += 0.0
                 gesheft = (dog_tail_q * 50.0) + (zombie_hand_q * 62.5) + (hog_hoof_q * 100.0) + (sucker_leg_q * 125.0) + (snork_foot_q * 150.0) + (jerboa_head_q * 166.5) + (snork_head_q * 200.0) + (burer_leg_q * 375.0) + (controler_hand_q * 625.0) + (burer_hand_q * 625.0) + (sucker_tentacle_q * 750.0) + (pseudo_giant_q * 750) + ( controler_brain_q * 1250) + (chimera_claw_q * 1250) + (poltergeist_heart_q * 1875.0)
                 gesheft_science = gesheft * 4
                 gesheft_premium_a = gesheft * 1.1
@@ -138,6 +258,13 @@ def frwrdmess(msg):
                 gesheft_science_premium_b = gesheft_science * 1.25
                 gesheft_science_premium_c = gesheft_science * 1.45
                 a_gesheft = artefacts_q * 5000
+                a_gesheft_premium_a = a_gesheft * 1.1
+                a_gesheft_premium_b = a_gesheft * 1.25
+                a_gesheft_premium_c = a_gesheft * 1.45
+                sum_getheft = a_gesheft + gesheft_science
+                sum_getheft_premium_a = sum_gesheft * 1.1
+                sum_getheft_premium_b = sum_gesheft * 1.25
+                sum_getheft_premium_c = sum_gesheft * 1.45
                 bot.send_message(msg.chat.id, f'''Выручка от продажи частей мутантов составит:
                 
 если продавать торговцу
@@ -153,6 +280,14 @@ def frwrdmess(msg):
 {int(gesheft_science_premium_c)}💰 с премиум статусом γ
 Прибыль от продажи артефактов составит:
 {int(a_gesheft)}💰 без премиум аккаунта
+{int(a_gesheft_premium_a)}💰 с премиум статусом α
+{int(a_gesheft_premium_b)}💰 с премиум статусом β
+{int(a_gesheft_premium_c)}💰 с премиум статусом γ
+Суммарная прибыль составит:
+{int(sum_gesheft)}💰 без премиум аккаунта
+{int(sum_getheft_premium_a)}💰 с премиум статусом α
+{int(sum_getheft_premium_b)}💰 с премиум статусом β
+{int(sum_getheft_premium_c)}💰 с премиум статусом γ
 Удачи, сталкер''')
             else:
                 bot.send_message(msg.chat.id, '''Разве это инвентарь?''')
