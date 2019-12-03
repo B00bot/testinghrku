@@ -319,7 +319,7 @@ def frwrdmess(msg):
                     artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
-                 if messtext.find('''«Кровь камня»''') != -1:
+                if messtext.find('''«Кровь камня»''') != -1:
                     artefacts = float(re.search(r'''«Кровь камня»\s(\d+)\sшт''' , messtext).group(2))
                     artefacts_q += artefacts
                 else:
@@ -336,6 +336,11 @@ def frwrdmess(msg):
                     artefacts_q += 0.0
                 if messtext.find('''«Каменный цветок»''') != -1:
                     artefacts = float(re.search(r'''«Каменный цветок»\s(\d+)\sшт''' , messtext).group(1))
+                    artefacts_q += artefacts
+                else:
+                    artefacts_q += 0.0
+                if messtext.find('''«Каменный цветок»''') != -1:
+                    artefacts = float(re.search(r'''«Каменный цветок»\s(\d+)\sшт''' , messtext).group(2))
                     artefacts_q += artefacts
                 else:
                     artefacts_q += 0.0
