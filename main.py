@@ -217,7 +217,7 @@ def frwrdmess(msg):
                 if messtext.find('''«Лунный свет»''') != -1:
                     a = messtext.find('''«Лунный свет»''')
                     b = messtext.rfind('''«Лунный свет»''')
-                    if a = b:
+                    if a == b:
                         artefacts = float(re.search(r'''«Лунный свет»\s(\d+)\sшт''' , messtext).group(1))
                         artefacts_q += artefacts
                     else:
