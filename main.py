@@ -30,6 +30,7 @@ def process_name_step(msg):
 
 def sex_step(msg):  
     global sex
+    gender = 0
     if msg.text.upper == 'MALE':
         gender = 'Мужчина'
     elif msg.text.upper == 'FEMALE':
