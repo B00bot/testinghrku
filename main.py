@@ -33,11 +33,14 @@ def sex_step(msg):
     gender = 0
     if msg.text.upper == 'MALE':
         gender = 'Мужчина'
+        sex = gender
+        print(gender)
     elif msg.text.upper == 'FEMALE':
         gender = 'Женщина'
+        sex = gender
+        print(gender)
     else:
         bot.send_message(msg.chat.id, '''Неверный ввод''') 
-    sex = gender
     bot.send_message(msg.chat.id, f'''Регистрация завершена. Твой персонаж {name}, {sex})''')
     print(name)
     print(sex)
