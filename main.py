@@ -26,9 +26,9 @@ def process_name_step(msg):
     bot.register_next_step_handler(msg, sex_step)
 
 def sex_step(msg):
-    if msg.text.lower == 'м':
+    if msg.text.upper == 'М':
         sex = 'Мужчина'
-    elif msg.text.lower == 'ж':
+    elif msg.text.upper == 'Ж':
         sex = 'Женщина'
     else:
         bot.send_message(msg.chat.id, '''Неверный ввод''')     
