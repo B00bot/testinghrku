@@ -26,7 +26,6 @@ def process_name_step(msg):
     bot.register_next_step_handler(msg, sex_step)
 
 def sex_step(msg):
-    sex = msg.text
     if msg.text.lower == 'м':
         sex = 'Мужчина'
     elif msg.text.lower == 'ж':
