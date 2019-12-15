@@ -11,7 +11,7 @@ from sqlalchemy.orm import mapper, sessionmaker
 bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
 
- @bot.message_handler(command=start)
+ @bot.message_handler(commands=['start'])
     def start_msg(msg):
          bot.send_message(msg.chat.id, f'''Приветствую тебя в карточной игре {Game_name}. Как нам тебя называть?''')
          bot.register_next_step_handler(msg, process_name_step)
