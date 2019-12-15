@@ -13,10 +13,8 @@ bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
 
 game_name = 'Ыгруля'
-name = None
 male = 'мужчина'
 female = 'женщина'
-gender = None
 
 
 @bot.message_handler(commands=['start'])
