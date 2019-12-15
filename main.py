@@ -2,7 +2,7 @@ import os
 
 import telebot
 from telebot import types
-from config import *
+from config import TOKEN, URLHEROKU
 from flask import Flask, request
 import sqlalchemy
 from sqlalchemy import create_engine, Column, Integer, String, Boolean, MetaData, Table
