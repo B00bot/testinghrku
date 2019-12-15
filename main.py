@@ -30,15 +30,12 @@ def process_name_step(msg):
     bot.send_message(msg.chat.id, f'''Приятно познакомиться, {name}. Выбери пол героя: male - мужчина, female - женщина''')
     bot.register_next_step_handler(msg, sex_step)
 
-def sex_step(msg):  
+def sex_step(msg):
+    global gender
     if msg.text.upper == 'MALE':
-        global gender
         gender = male
     elif msg.text.upper == 'FEMALE':
-        global gender
         gender = female
-    else:
-        bot.send_message(msg.chat.id, '''Неверный ввод''') 
     bot.send_message(msg.chat.id, f'''Регистрация завершена. Твой персонаж {name}, {gender})''')
 
 
