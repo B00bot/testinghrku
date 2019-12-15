@@ -31,8 +31,8 @@ def process_name_step(msg):
 def sex_step(msg):
     gender = msg.text
     print(gender)
-    print(gender.lower)
-    if  gender.lower == 'male' or  gender.lower == 'female':
+    print(gender.lower())
+    if  gender.lower() == 'male' or  gender.lower() == 'female':
         bot.send_message(msg.chat.id, f'''Регистрация завершена. Твой персонаж {name}, {gender})''')
     else:
         bot.send_message(msg.chat.id, f'''неверный ввод)''')
