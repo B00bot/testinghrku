@@ -14,7 +14,8 @@ server = Flask(__name__)
 
 game_name = 'Ыгруля'
 name = None
-sex = None
+male = 'мужчина'
+female = 'женщина'
 
 
 @bot.message_handler(commands=['start'])
@@ -29,21 +30,14 @@ def process_name_step(msg):
     bot.register_next_step_handler(msg, sex_step)
 
 def sex_step(msg):  
-    global sex
-    gender = 0
     if msg.text.upper == 'MALE':
-        gender = 'Мужчина'
-        sex = gender
-        print(gender)
+        gender = male
     elif msg.text.upper == 'FEMALE':
-        gender = 'Женщина'
-        sex = gender
-        print(gender)
+        gender = female
     else:
         bot.send_message(msg.chat.id, '''Неверный ввод''') 
-    bot.send_message(msg.chat.id, f'''Регистрация завершена. Твой персонаж {name}, {sex})''')
-    print(name)
-    print(sex)
+    bot.send_message(msg.chat.id, f'''Регистрация завершена. Твой персонаж {name}, {gender})''')
+
 
 
 @server.route('/' + TOKEN, methods=['POST'])
