@@ -28,11 +28,10 @@ def process_name_step(msg):
     bot.register_next_step_handler(msg, sex_step)
 
 def sex_step(msg):
+    global sex
     if msg.text.upper == 'М':
-        global sex
         sex = 'Мужчина'
     elif msg.text.upper == 'Ж':
-        global sex
         sex = 'Женщина'
     else:
         bot.send_message(msg.chat.id, '''Неверный ввод''')     
