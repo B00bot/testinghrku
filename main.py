@@ -13,6 +13,8 @@ bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
 
 game_name = 'Ыгруля'
+name = None
+gender = None
 
 
 @bot.message_handler(commands=['start'])
@@ -21,16 +23,16 @@ def start_msg(msg):
     bot.register_next_step_handler(msg, process_name_step)
 
 def process_name_step(msg):
-    global name 
+    global name
     name = msg.text
-    bot.send_message(msg.chat.id, f'''Приятно познакомиться, {name}. Выбери пол героя: М - мужчина, Ж - женщина''')
+    bot.send_message(msg.chat.id, f'''Приятно познакомиться, {name}. Выбери пол героя: male - мужчина, female - женщина''')
     bot.register_next_step_handler(msg, sex_step)
 
 def sex_step(msg):
-    global gender
-    if msg.text.upper == 'М':
+    global gender    
+    if msg.text.upper == 'MALE':
         gender = 'Мужчина'
-    elif msg.text.upper == 'Ж':
+    elif msg.text.upper == 'FEMALE':
         gender = 'Женщина'
     else:
         bot.send_message(msg.chat.id, '''Неверный ввод''')     
