@@ -27,11 +27,11 @@ def process_name_step(msg):
     bot.register_next_step_handler(msg, sex_step)
 
 def sex_step(msg):
-    global sex
+    global gender
     if msg.text.upper == 'М':
-        sex = 'Мужчина'
+        gender = 'Мужчина'
     elif msg.text.upper == 'Ж':
-        sex = 'Женщина'
+        gender = 'Женщина'
     else:
         bot.send_message(msg.chat.id, '''Неверный ввод''')     
     bot.send_message(msg.chat.id, f'''Регистрация завершена. Твой персонаж {name}, {sex})''')
