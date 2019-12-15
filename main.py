@@ -26,11 +26,14 @@ def process_name_step(msg):
     bot.register_next_step_handler(msg, sex_step)
 
 def sex_step(msg):
-    if msg.text.lower == 'М':
+    sex = msg.text
+    if msg.text.lower == 'м':
         sex = 'Мужчина'
-    elif msg.text.lower == 'Ж':
+    elif msg.text.lower == 'ж':
         sex = 'Женщина'
-    bot.send_message(msg.chat.id, f'''Регистрация завершена. Твой персонаж {name}, пол - {sex})''')
+    else:
+        bot.send_message(msg.chat.id, '''Неверный ввод''')     
+    bot.send_message(msg.chat.id, f'''Регистрация завершена. Твой персонаж {name}, {sex})''')
 
 
 @server.route('/' + TOKEN, methods=['POST'])
