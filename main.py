@@ -26,7 +26,7 @@ def sex_step(msg):
         sex = 'Мужчина'
     elif msg.text.lower == 'Ж':
         sex = 'Женщина'
-    bot.send_message(msg.chat.id, f'''Регистрация завершена. Твой персонаж {name}, пол - {sex})'''
+    bot.send_message(msg.chat.id, f'''Регистрация завершена. Твой персонаж {name}, пол - {sex})''')
 
 
 @server.route('/' + TOKEN, methods=['POST'])
